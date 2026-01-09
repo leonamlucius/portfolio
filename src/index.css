@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../src/assets/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf");
+}
+
+@theme {
+  --font-family-base: "Nunito Sans", sans-serif;
+}

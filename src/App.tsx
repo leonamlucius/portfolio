@@ -1,20 +1,15 @@
-import "./App.css";
-import Sidebar from "./sidebar.tsx";
-import Body from "./body.tsx";
+import { useRef } from "react";
+import Body, { BodyRef } from "./body.tsx";
+import SideBar from "./sidebar.tsx";
 
 function App() {
-  // const [count, setCount] = useState(0)
+  const bodyRef = useRef<BodyRef>(null);
 
   return (
-    <>
-      <div className="flex w-full h-screen">
-        <Sidebar />
-
-        <Body />
-
-        
-      </div>
-    </>
+    <div className="flex">
+      <SideBar bodyRef={bodyRef} />
+      <Body ref={bodyRef} />
+    </div>
   );
 }
 
