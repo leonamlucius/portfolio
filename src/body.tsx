@@ -29,7 +29,7 @@ const Body = forwardRef<BodyRef>((props, ref) => {
 
   return (
     <>
-      <div className="bg-gray-800 w-full items-center justify-start flex flex-col p-1 h-screen overflow-y-auto gap-1">
+      <div className=" w-full items-center justify-start flex flex-col p-1 h-screen overflow-y-auto gap-1">
         <div ref={targetPrincipal} className="w-full">
           <Principal />
         </div>

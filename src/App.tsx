@@ -6,7 +6,7 @@ function App() {
   const bodyRef = useRef<BodyRef>(null);
 
   return (
-    <div className="flex">
+    <div className="bg-gray-800 flex">
       <SideBar bodyRef={bodyRef} />
       <Body ref={bodyRef} />
     </div>

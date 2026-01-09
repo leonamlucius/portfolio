@@ -37,14 +37,14 @@ function sideBar({ bodyRef }: SideBarProps) {
 
   return (
     <>
-      <div className="bg-gray-50 text-white w-60 h-auto flex flex-col items-start justify-start p-2.5 box-border gap-2 font-semibold rounded-3xl">
+      <div className="bg-gray-200 text-white w-60 h-auto flex flex-col items-start justify-start p-2.5 box-border gap-2 font-semibold rounded-3xl">
         {menuItems.map((item) => (
           <li
             key={item.id}
             className={`Nunito Sans sidebar-item flex items-center gap-5 p-2 justify-start w-full rounded-3xl hover:bg-gray-700 cursor-pointer 
             ${
               activeItem === item.id
-                ? "bg-gray-200 text-black"
+                ? "bg-gray-300 text-black"
                 : "bg-gray-500 hover:bg-gray-700"
             }`}
             onClick={() => handleItemClick(item.id)}
