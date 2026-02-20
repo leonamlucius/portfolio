@@ -26,6 +26,10 @@ function Principal() {
             className="w-48 h-48  object-cover mr-4"
           />
         </div>
+
+        <div className="w-full h-90 flex items-start justify-start p-3 box-border antialiased font-robot text-xl indent-3 pt-6">
+          Formado em Análise e Desenvolvimento de Sistemas, tenho experiência em desenvolvimento de software, com foco em JavaScript, TypeScript, React e Spring(JAVA) . Sou apaixonado por criar soluções eficientes e inovadoras, sempre buscando aprimorar minhas habilidades e contribuir para projetos desafiadores.
+        </div>
       </div>
     </>
   );
