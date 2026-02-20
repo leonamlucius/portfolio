@@ -41,7 +41,7 @@ function sideBar({ bodyRef }: SideBarProps) {
         {menuItems.map((item) => (
           <li
             key={item.id}
-            className={`Nunito Sans sidebar-item flex items-center gap-5 p-2 justify-start w-full rounded-3xl hover:bg-gray-700 cursor-pointer 
+            className={`Nunito Sans sidebar-item flex items-center gap-5 p-2 font-semibold justify-start w-full rounded-3xl hover:bg-gray-700 cursor-pointer 
             ${
               activeItem === item.id
                 ? "bg-gray-300 text-black"
