@@ -8,9 +8,10 @@ import {
   SiSpring,
   SiPython,
   SiMysql,
-  SiFastapi
+  SiFastapi,
+  SiAngular
 } from "react-icons/si";
-import fotoPerfil from "./assets/images/0d64989794b1a4c9d89bff571d3d5842.jpg";
+import fotoPerfil from "./assets/images/IMG_20260424_083949.jpg";
 
 function Principal() {
   const targetPrincipal = useRef<HTMLDivElement>(null);
@@ -63,7 +64,7 @@ function Principal() {
           <img
             src={fotoPerfil}
             alt="Foto de Perfil"
-            className="w-48 h-48  object-cover mr-4"
+            className="w-48 h-48 object-cover object-top mr-4 rounded-3xl"
           />
         </div>
 
@@ -89,6 +90,7 @@ function Principal() {
             <SiPython className="text-4xl text-yellow-500" />
             <SiMysql className="text-4xl text-blue-500" />
             <SiFastapi className="text-4xl text-green-500" />
+            <SiAngular className="text-4xl text-red-600" />
           </div>
         </div>
       </div>
