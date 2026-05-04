@@ -1,4 +1,4 @@
-import { useRef, forwardRef, useImperativeHandle } from "react";
+import { useRef, forwardRef, useImperativeHandle, useEffect } from "react";
 import "./App.css";
 import Principal from "./principal.tsx";
 import Projetos from "./projetos.tsx";
@@ -10,10 +10,15 @@ export interface BodyRef {
   scrollToContatos: () => void;
 }
 
-const Body = forwardRef<BodyRef>((props, ref) => {
+interface BodyProps {
+  onSectionChange?: (section: string) => void;
+}
+
+const Body = forwardRef<BodyRef, BodyProps>(({ onSectionChange }, ref) => {
   const targetPrincipal = useRef<HTMLDivElement>(null);
   const targetProjetos = useRef<HTMLDivElement>(null);
   const targetContatos = useRef<HTMLDivElement>(null);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useImperativeHandle(ref, () => ({
     scrollToPrincipal: () => {
@@ -27,9 +32,42 @@ const Body = forwardRef<BodyRef>((props, ref) => {
     },
   }));
 
+  useEffect(() => {
+    if (!onSectionChange) return;
+
+    const sections = [
+      { ref: targetPrincipal, id: "principal" },
+      { ref: targetProjetos, id: "projetos" },
+      { ref: targetContatos, id: "contatos" },
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const section = sections.find(
+              (s) => s.ref.current === entry.target,
+            );
+            if (section) onSectionChange(section.id);
+          }
+        });
+      },
+      { root: scrollContainerRef.current, threshold: 0.3 },
+    );
+
+    sections.forEach(({ ref }) => {
+      if (ref.current) observer.observe(ref.current);
+    });
+
+    return () => observer.disconnect();
+  }, [onSectionChange]);
+
   return (
     <>
-      <div className=" w-full items-center justify-start flex flex-col p-1 h-screen overflow-y-auto gap-1">
+      <div
+        ref={scrollContainerRef}
+        className=" w-full items-center justify-start flex flex-col p-1 h-screen overflow-y-auto gap-1"
+      >
         <div ref={targetPrincipal} className="w-full">
           <Principal />
         </div>

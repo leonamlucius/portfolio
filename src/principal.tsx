@@ -47,7 +47,7 @@ function Principal() {
     <>
       <div
         ref={targetPrincipal}
-        className="bg-white w-full min-h-screen  justify-start items-center flex flex-col rounded-3xl"
+        className="bg-white w-full min-h-screen  justify-between items-center flex flex-col rounded-3xl"
       >
         <div className="w-full flex items-start pt-3 pl-3 text-[#D71921] ">
           <FaCircle />
@@ -58,12 +58,12 @@ function Principal() {
             sequence={["leonamlucius", 5500]}
             wrapper="div"
             speed={30}
-            className="font-bitcount w-full text-6xl pl-3 pt-4 box-border antialiased hover:text-[63px] transition-all duration-200 cursor-pointer"
+            className="font-bitcount w-full text-6xl pl-3 pt-4 box-border antialiased hover:text-[63px] transition-all duration-200 cursor-pointer font-normal"
             repeat={0}
             
           />
 
-          <div className="w-44 h-44 rounded-full overflow-hidden shadow-lg aspect-square flex items-center justify-center">
+          <div className="w-44 h-44  overflow-hidden shadow-lg  flex items-center justify-center">
             <img
               src={fotoPerfil}
               alt="Foto de Perfil"
@@ -74,7 +74,7 @@ function Principal() {
           </div>
         </div>
 
-        <div className="w-full h-auto flex items-start justify-start p-3 box-border antialiased font-robot text-xl indent-3 pt-6 hover:text-[20.5px] transition-all duration-300 cursor-pointer">
+        <div className="w-full h-auto flex items-start justify-start p-3 box-border antialiased font-robot text-xl indent-3 pt-6">
           <p className="m-0 font-semibold">
             Formado em Análise e Desenvolvimento de Sistemas, tenho experiência
             em desenvolvimento de software, com foco em JavaScript, TypeScript,

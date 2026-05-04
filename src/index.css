@@ -30,3 +30,12 @@
   --font-bitcount: "Bitcount Grid Single", serif;
   --font-bitcount-ligth: "Bitcount Grid Single Light", serif;
 }
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@theme {
+  /* ... suas outras variáveis ... */
+  --animate-wave: wave 1.5s ease-in-out infinite;
+}
