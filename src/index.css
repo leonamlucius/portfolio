@@ -12,9 +12,21 @@
   font-weight: 300;
 }
 
+@font-face {
+  font-family: "Bitcount Grid Single";
+  src: url("./assets/fonts/Bitcount_Grid_Single/static/BitcountGridSingle-Medium.ttf");
+  font-weight: 400;
+}
 
+@font-face {
+  font-family: "Bitcount Grid Single Light";
+  src: url("./assets/fonts/Bitcount_Grid_Single/static/BitcountGridSingle-Light.ttf");
+  font-weight: 300;
+}
 
 @theme {
   --font-family-base: "Nunito Sans", sans-serif;
   --font-robot: "Roboto Slab", serif;
+  --font-bitcount: "Bitcount Grid Single", serif;
+  --font-bitcount-ligth: "Bitcount Grid Single Light", serif;
 }

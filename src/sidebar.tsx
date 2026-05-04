@@ -6,9 +6,9 @@ import { useState } from "react";
 import { BodyRef } from "./body.tsx";
 
 const menuItems = [
-  { id: "principal", name: "Principal", icon: <FaInfoCircle /> },
-  { id: "projetos", name: "Projetos", icon: <FaBriefcase /> },
-  { id: "contatos", name: "Contatos", icon: <BsFillTelephoneFill /> },
+  { id: "principal", name: "principal", icon: <FaInfoCircle /> },
+  { id: "projetos", name: "projetos", icon: <FaBriefcase /> },
+  { id: "contatos", name: "contatos", icon: <BsFillTelephoneFill /> },
 ];
 
 interface SideBarProps {
@@ -37,19 +37,18 @@ function sideBar({ bodyRef }: SideBarProps) {
 
   return (
     <>
-      <div className="bg-gray-200 text-white w-60 h-auto flex flex-col items-start justify-start p-2.5 box-border gap-2 font-semibold rounded-3xl">
+      <div className="bg-white text-white w-60 h-auto flex flex-col items-start justify-start p-2.5 box-border gap-2 font-semibold rounded-3xl">
         {menuItems.map((item) => (
           <li
             key={item.id}
-            className={`Nunito Sans sidebar-item flex items-center gap-5 p-2 font-semibold justify-start w-full rounded-3xl hover:bg-gray-700 cursor-pointer 
+            className={`font-robot tracking-wider  sidebar-item flex items-center gap-3 p-2 font-noraml justify-center w-full rounded-3xl transition hover:-translate-y-1 cursor-pointer  
             ${
               activeItem === item.id
-                ? "bg-gray-300 text-black"
-                : "bg-gray-500 hover:bg-gray-700"
+                ? "bg-gray-300 text-black  italic"
+                : "bg-[#1B1B1D]"
             }`}
             onClick={() => handleItemClick(item.id)}
           >
-            {item.icon}
             <span>{item.name}</span>
           </li>
         ))}
