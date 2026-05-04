@@ -11,7 +11,7 @@ import {
   SiFastapi,
   SiAngular,
 } from "react-icons/si";
-import fotoPerfil from "./assets/images/IMG_20260424_083949.jpg";
+import fotoPerfil from "./assets/images/tuff-baby-ai-baby.gif";
 import { TypeAnimation } from "react-type-animation";
 
 function Principal() {
@@ -63,26 +63,18 @@ function Principal() {
             
           />
 
-          <div className="w-44 h-44  overflow-hidden shadow-lg  flex items-center justify-center">
-            <img
-              src={fotoPerfil}
-              alt="Foto de Perfil"
-              className="min-w-full min-h-full object-cover object-center"
-              loading="lazy"
-              style={{ imageRendering: "auto" }}
-            />
-          </div>
+         
         </div>
 
         <div className="w-full h-auto flex items-start justify-start p-3 box-border antialiased font-robot text-xl indent-3 pt-6">
           <p className="m-0 font-semibold">
             Formado em Análise e Desenvolvimento de Sistemas, tenho experiência
             em desenvolvimento de software, com foco em JavaScript, TypeScript,
-            React, porém, com experiência em Spring(Java) e FastAPI(Python). Sou
+            React, Angular, porém, com experiência em Spring(Java) e FastAPI(Python). Sou
             apaixonado por criar soluções eficientes e inovadoras, sempre
             buscando aprimorar minhas habilidades e contribuir para projetos
             desafiadores. Tenho experiência no ramo de comércio exterior, porém,
-            sempre busco desenvolver soluções paraa todos os segmentos, com foco
+            sempre busco desenvolver soluções para todos os segmentos, com foco
             em qualidade e eficiência. Estou sempre aberto a novas oportunidades
             e desafios, buscando crescer profissionalmente e contribuir para o
             sucesso de projetos e equipes.
