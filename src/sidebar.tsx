@@ -20,7 +20,32 @@ const name = "leonamlucius";
 
 function sideBar({ bodyRef, activeSection }: SideBarProps) {
   const [activeIndex, setActiveIndex] = useState(0);
-  const emoticons = [";)", ":0", ";(", "B-)", ">:)", ":D", ":'(", ":P", "O.O", ">:(", "<3", ">:o", ":3", "T_T", "^-^", "O/", "\\o", "o.O", ">:o", ":|", ":]", ":[", ":>", ":<"];
+  const emoticons = [
+    ";)",
+    ":0",
+    ";(",
+    "B-)",
+    ">:)",
+    ":D",
+    ":'(",
+    ":P",
+    "O.O",
+    ">:(",
+    "<3",
+    ">:o",
+    ":3",
+    "T_T",
+    "^-^",
+    "O/",
+    "\\o",
+    "o.O",
+    ">:o",
+    ":|",
+    ":]",
+    ":[",
+    ":>",
+    ":<",
+  ];
   const [emojiIndex, setEmojiIndex] = useState(0);
 
   useEffect(() => {
@@ -38,10 +63,9 @@ function sideBar({ bodyRef, activeSection }: SideBarProps) {
     return () => clearInterval(interval);
   }, [activeSection]);
 
-
-  const clickToprincipal = (() => {
+  const clickToprincipal = () => {
     bodyRef.current?.scrollToPrincipal();
-  });
+  };
   const handleItemClick = (itemId: string) => {
     switch (itemId) {
       case "principal":
@@ -76,30 +100,32 @@ function sideBar({ bodyRef, activeSection }: SideBarProps) {
           ))}
         </div>
 
-        <hr className="w-full border-t-2 border-[#1B1B1D] border-dotted " />
+        <div className="w-full">
+            <hr className="w-full border-t-2 border-[#1B1B1D] border-dotted " />
 
-        <div className="w-full flex items-center justify-center gap-2 p-5 box-border">
-          {activeSection !== "principal" ? (
-            <p className="font-bitcount text-black w-full text-[24px] box-border antialiased font-normal whitespace-nowrap">
-              {name.split("").map((letra, index) => (
-                <span
-                  key={index}
-                  className={`inline-block font-bitcount text-[24px] transition-all duration-200 hover: cursor-pointer ${
-                    activeIndex === index ? "scale-90" : "text-black"
-                  }`}
-                  onClick={clickToprincipal}
-                >
-                  {activeIndex === index
-                    ? letra.toUpperCase()
-                    : letra.toLowerCase()}
+            <div className="w-full flex items-center justify-center gap-2 p-5 box-border">
+              {activeSection !== "principal" ? (
+                <p className="font-bitcount text-black w-full text-[24px] box-border antialiased font-normal whitespace-nowrap">
+                  {name.split("").map((letra, index) => (
+                    <span
+                      key={index}
+                      className={`inline-block font-bitcount text-[24px] transition-all duration-200 hover: cursor-pointer ${
+                        activeIndex === index ? "scale-90" : "text-black"
+                      }`}
+                      onClick={clickToprincipal}
+                    >
+                      {activeIndex === index
+                        ? letra.toUpperCase()
+                        : letra.toLowerCase()}
+                    </span>
+                  ))}
+                </p>
+              ) : (
+                <span className="font-bitcount text-black text-[24px] transition-all duration-300">
+                  {emoticons[emojiIndex]}
                 </span>
-              ))}
-            </p>
-          ) : (
-            <span className="font-bitcount text-black text-[24px] transition-all duration-300">
-              {emoticons[emojiIndex]}
-            </span>
-          )}
+              )}
+            </div>
         </div>
       </div>
     </>

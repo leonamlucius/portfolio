@@ -11,28 +11,28 @@ function Projetos() {
       link: imageOmsys,
     },
     {
-      name: "Projeto 2",
-      description: "Descrição do projeto 2",
+      name: "",
+      description: "",
       link: "",
     },
     {
-      name: "Projeto 3",
-      description: "Descrição do projeto 3",
+      name: "",
+      description: "",
       link: "",
     },
     {
-      name: "Projeto 4",
-      description: "Descrição do projeto 4",
+      name: "",
+      description: "",
       link: "",
     },
     {
-      name: "Projeto 5",
-      description: "Descrição do projeto 5",
+      name: "",
+      description: "",
       link: "",
     },
     {
-      name: "Projeto 6",
-      description: "Descrição do projeto 6",
+      name: "",
+      description: "",
       link: "",
     },
   ];
@@ -43,7 +43,7 @@ function Projetos() {
           <FaCircle />
         </div>
 
-        <div className="w-full h-50 flex items-end  justify-between p-1.5 ">
+        <div className="w-full h-50 flex items-end  justify-center p-1.5 ">
           <div className="font-bitcount  w-full text-6xl box-border antialiased  hover:text-[65px] transition-all duration-300 cursor-pointer">
             Projetos
           </div>
@@ -52,16 +52,20 @@ function Projetos() {
         <div className="grid grid-cols-3 gap-4 w-full p-5 box-border">
           {projetos.map((projeto) => (
             <div className="bg-[#1B1B1D] text-white h-80 p-7 rounded-3xl flex flex-col gap-3 overflow-clip hover: cursor-pointer relative">
-              <h2 className="font-bitcount text-2xl">{projeto.name}</h2>
+              <h2 className="font-robot tracking-wider italic text-2xl font-light">
+                {projeto.name}
+              </h2>
               <p className="font-robot text-base h-40 overflow-hidden">
                 {projeto.description}
               </p>
-              <a
-                href={projeto.link}
-                className="text-[#D71921] font-robot text-sm hover:underline"
-              >
-                Ver Projeto
-              </a>
+              {projeto.link && (
+                <a
+                  href={projeto.link}
+                  className="text-[#D71921] font-robot text-sm hover:underline"
+                >
+                  Ver Projeto
+                </a>
+              )}
               {projeto.link && (
                 <img
                   src={projeto.link}

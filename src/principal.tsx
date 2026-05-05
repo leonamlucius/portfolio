@@ -47,18 +47,18 @@ function Principal() {
     <>
       <div
         ref={targetPrincipal}
-        className="bg-white w-full min-h-screen  justify-between items-center flex flex-col rounded-3xl"
+        className="bg-white w-full min-h-screen  justify-start items-center flex flex-col rounded-3xl"
       >
         <div className="w-full flex items-start pt-3 pl-3 text-[#D71921] ">
           <FaCircle />
         </div>
 
-        <div className="w-full h-50 flex items-end  justify-between p-1.5 antialiased ">
+        <div className="w-full h-50 flex items-end  justify-center p-1.5 antialiased ">
           <TypeAnimation
             sequence={["leonamlucius", 5500]}
             wrapper="div"
             speed={30}
-            className="font-bitcount w-full text-6xl pl-3 pt-4 box-border antialiased hover:text-[63px] transition-all duration-200 cursor-pointer font-normal"
+            className="font-bitcount w-full text-7xl pl-3 pt-4 box-border antialiased hover:text-[75px] transition-all duration-100 cursor-pointer "
             repeat={0}
             
           />
@@ -67,7 +67,7 @@ function Principal() {
         </div>
 
         <div className="w-full h-auto flex items-start justify-start p-3 box-border antialiased font-robot text-xl indent-3 pt-6">
-          <p className="m-0 font-semibold">
+          <p className="m-0 tracking-wider text-black font-medium">
             Formado em Análise e Desenvolvimento de Sistemas, tenho experiência
             em desenvolvimento de software, com foco em JavaScript, TypeScript,
             React, Angular, porém, com experiência em Spring(Java) e FastAPI(Python). Sou
@@ -82,7 +82,7 @@ function Principal() {
         </div>
 
         <div className="w-full h-auto flex flex-col items-center justify-start p-3 box-border antialiased font-robot text-xl">
-          <div className="font-bitcount font-normal w-full text-3xl box-border antialiased">
+          <div className="font-bitcount font-normal w-full text-4xl box-border antialiased">
             Minhas stacks
           </div>
 
