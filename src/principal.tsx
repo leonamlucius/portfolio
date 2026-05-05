@@ -11,7 +11,7 @@ import {
   SiFastapi,
   SiAngular,
 } from "react-icons/si";
-import fotoPerfil from "./assets/images/tuff-baby-ai-baby.gif";
+// import fotoPerfil from "./assets/images/tuff-baby-ai-baby.gif";
 import { TypeAnimation } from "react-type-animation";
 
 function Principal() {
