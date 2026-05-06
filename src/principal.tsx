@@ -60,7 +60,7 @@ function Principal() {
             sequence={["leonamlucius", 400, () => setShowIcon(true)]}
             wrapper="div"
             speed={30}
-            className="transition-all tracking-wider font-normal font-domine w-auto text-7xl  pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative"
+            className="transition-all tracking-wider font-normal font-domine w-auto text-4xl sm:text-5xl md:text-6xl lg:text-7xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative"
             repeat={0}
             cursor={false}
           />
@@ -71,7 +71,7 @@ function Principal() {
         </div>
 
         <div className="w-full h-auto flex items-start justify-start p-3 box-border  text-xl pt-6">
-          <p className="transition-all duration-200 ease-out font-domine m-0 tracking-wider w-[60%] text-justify h-auto hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
+          <p className="transition-all duration-200 ease-out font-domine m-0 tracking-wider w-full md:w-[60%] text-justify text-base md:text-xl h-auto hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
             Formado em Análise e Desenvolvimento de Sistemas, tenho experiência
             em desenvolvimento de software, com foco em JavaScript, TypeScript,
             React, Angular, porém, com experiência em Spring(Java) e
@@ -91,7 +91,7 @@ function Principal() {
               sequence={["minhas stacks", 5500]}
               wrapper="div"
               speed={30}
-              className="tracking-wider font-normal font-domine w-auto text-7xl  pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative"
+              className="tracking-wider font-normal font-domine w-auto text-4xl sm:text-5xl md:text-6xl lg:text-7xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative"
               repeat={0}
               cursor={false}
             />

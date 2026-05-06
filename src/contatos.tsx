@@ -15,7 +15,7 @@ function Contatos() {
         </div>
 
         <div className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
-          <div className="transition-all tracking-wider font-normal font-domine w-auto text-6xl  pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
+          <div className="transition-all tracking-wider font-normal font-domine w-auto text-4xl sm:text-5xl md:text-6xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
             contatos
           </div>
         </div>
@@ -25,9 +25,9 @@ function Contatos() {
             className="flex items-center justify-space gap-7  w-full"
             id="divIcons"
           >
-            <FaLinkedin className="text-6xl text-black" />
+            <FaLinkedin className="text-4xl md:text-6xl text-black" />
             <a
-              className=" w-[205px] no-underline font-robot tracking-wider text-black text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
+              className="w-auto no-underline font-robot tracking-wider text-black text-xl md:text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
               href="https://www.linkedin.com/in/leonamlucius/"
               target="_blank"
               rel="noopener noreferrer"
@@ -37,7 +37,7 @@ function Contatos() {
             <img
               src={qrCodeLink}
               alt="GitHub"
-              className="w-33 h-33 object-cover object-center"
+              className="hidden sm:block w-24 h-24 md:w-33 md:h-33 object-cover object-center"
               loading="lazy"
               style={{ imageRendering: "auto" }}
             />
@@ -47,9 +47,9 @@ function Contatos() {
             className="flex items-center justify-start gap-7  w-full"
             id="divIcons"
           >
-            <FaSquareGithub className="text-6xl text-black" />
+            <FaSquareGithub className="text-4xl md:text-6xl text-black" />
             <a
-              className="w-[205px] no-underline font-robot tracking-wider text-black text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
+              className="w-auto no-underline font-robot tracking-wider text-black text-xl md:text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
               href="https://github.com/leonamlucius"
               target="_blank"
               rel="noopener noreferrer"
@@ -59,7 +59,7 @@ function Contatos() {
             <img
               src={qrCodeGit}
               alt="GitHub"
-              className="w-33 h-33 object-cover object-center"
+              className="hidden sm:block w-24 h-24 md:w-33 md:h-33 object-cover object-center"
               loading="lazy"
               style={{ imageRendering: "auto" }}
             />
@@ -69,9 +69,9 @@ function Contatos() {
             className="flex items-center justify-start gap-7   w-full"
             id="divIcons"
           >
-            <MdAlternateEmail className="text-6xl text-black" />
+            <MdAlternateEmail className="text-4xl md:text-6xl text-black" />
             <a
-              className="w-[205px] no-underline font-robot tracking-wider text-black text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
+              className="w-auto no-underline font-robot tracking-wider text-black text-xl md:text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
               href="mailto:leonam253@gmail.com"
               target="_blank"
               rel="noopener noreferrer"

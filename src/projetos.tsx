@@ -44,12 +44,12 @@ function Projetos() {
         </div>
 
         <div className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
-          <div className="transition-all tracking-wider font-normal font-domine w-auto text-6xl  pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
+          <div className="transition-all tracking-wider font-normal font-domine w-auto text-4xl sm:text-5xl md:text-6xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
             projetos
           </div>
         </div>
 
-        <div className="grid grid-cols-3 gap-4 w-full p-5 box-border">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full p-5 box-border">
           {projetos.map((projeto) => (
             <div className="bg-[#000000] text-white h-80 p-7 flex flex-col gap-3 overflow-clip cursor-pointer transition-all duration-200 hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
               <h2 className="font-robot tracking-wider italic text-2xl font-light">
