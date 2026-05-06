@@ -6,7 +6,7 @@ function App() {
 
 
   return (
-    <div className="bg-black flex p-4">
+    <div className="bg-[#FFFFFF] flex p-3">
       {/* <SideBar bodyRef={bodyRef} activeSection={activeSection} /> */}
       <Body ref={bodyRef}/>
     </div>

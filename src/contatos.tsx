@@ -14,8 +14,8 @@ function Contatos() {
           <FaCircle />
         </div>
 
-        <div className="w-full h-auto flex items-end  justify-center p-1.5 antialiased">
-          <div className="tracking-wider font-normal font-domine w-full text-6xl  pt-4 box-border antialiased hover:text-[62px] transition-all duration-100 cursor-pointer ">
+        <div className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
+          <div className="transition-all tracking-wider font-normal font-domine w-auto text-6xl  pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
             contatos
           </div>
         </div>

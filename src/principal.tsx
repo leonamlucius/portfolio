@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FaCircle } from "react-icons/fa";
 import "./App.css";
 import {
@@ -13,9 +13,11 @@ import {
 } from "react-icons/si";
 // import fotoPerfil from "./assets/images/tuff-baby-ai-baby.gif";
 import { TypeAnimation } from "react-type-animation";
+import meuIcone from "./assets/images/victory-svgrepo-com.svg";
 
 function Principal() {
   const targetPrincipal = useRef<HTMLDivElement>(null);
+  const [showIcon, setShowIcon] = useState(false);
 
   const divIcons = document.getElementById("divIcons");
 
@@ -53,19 +55,23 @@ function Principal() {
           <FaCircle />
         </div>
 
-        <div className="w-full h-auto flex items-center  justify-center p-1.5 antialiased ">
+        <div className="w-full h-auto flex items-center  justify-start p-1.5 antialiased ">
           <TypeAnimation
-            sequence={["leonamlucius", 5500]}
+            sequence={["leonamlucius", 400, () => setShowIcon(true)]}
             wrapper="div"
             speed={30}
-            className="tracking-wider font-normal font-domine w-full text-7xl  pt-4 box-border antialiased hover:text-[73px] transition-all duration-100 cursor-pointer "
+            className="transition-all tracking-wider font-normal font-domine w-auto text-7xl  pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative"
             repeat={0}
             cursor={false}
+          />
+          <img
+            src={meuIcone}
+            className={`w-8 h-8 transition-all duration-100 ${showIcon ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
           />
         </div>
 
         <div className="w-full h-auto flex items-start justify-start p-3 box-border  text-xl pt-6">
-          <p className="transition-all ease-in font-domine m-0 tracking-wider w-[60%] text-justify h-auto hover:bg-[#1B1B1D] hover:text-white hover:-translate-y-[3px] hover:-translate-x-[-3px]">
+          <p className="transition-all duration-200 ease-out font-domine m-0 tracking-wider w-[60%] text-justify h-auto hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
             Formado em Análise e Desenvolvimento de Sistemas, tenho experiência
             em desenvolvimento de software, com foco em JavaScript, TypeScript,
             React, Angular, porém, com experiência em Spring(Java) e
@@ -79,13 +85,13 @@ function Principal() {
           </p>
         </div>
 
-        <div className="w-full h-auto flex flex-col items-center justify-start p-1.5  box-border antialiased font-robot text-xl">
-          <div className="tracking-wider font-normal font-domine w-full text-4xl  box-border antialiased">
+        <div className="w-full h-auto flex flex-col  justify-start  items-start p-1.5  box-border antialiased font-robot text-xl">
+          <div className="transition-all tracking-wider font-normal font-domine w-auto flex justify-start text-4xl  box-border antialiased">
             <TypeAnimation
               sequence={["minhas stacks", 5500]}
               wrapper="div"
               speed={30}
-              className="tracking-wider font-normal font-domine w-full text-6xl  pt-4 box-border antialiased hover:text-[62px] transition-all duration-100 cursor-pointer "
+              className="tracking-wider font-normal font-domine w-auto text-7xl  pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative"
               repeat={0}
               cursor={false}
             />
