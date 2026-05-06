@@ -7,8 +7,8 @@ function App() {
   const [activeSection, setActiveSection] = useState("principal");
 
   return (
-    <div className="bg-[#1B1B1D] flex scroll-mr-96">
-      <SideBar bodyRef={bodyRef} activeSection={activeSection} />
+    <div className="bg-black flex p-4">
+      {/* <SideBar bodyRef={bodyRef} activeSection={activeSection} /> */}
       <Body ref={bodyRef} onSectionChange={setActiveSection} />
     </div>
   );

@@ -38,14 +38,14 @@ function Projetos() {
   ];
   return (
     <>
-      <div className="bg-white w-full min-h-screen  justify-start items-center flex flex-col rounded-3xl">
+      <div className="bg-[#FFFFFF] w-full min-h-screen  justify-start items-center flex flex-col rounded-3xl overflow-clip">
         <div className="w-full flex items-start pt-3 pl-3 text-[#D71921]">
           <FaCircle />
         </div>
 
-        <div className="w-full h-50 flex items-end  justify-center p-1.5 ">
-          <div className="font-bitcount  w-full text-6xl box-border antialiased  hover:text-[65px] transition-all duration-300 cursor-pointer">
-            Projetos
+        <div className="w-full h-auto flex items-center  justify-center p-1.5 antialiased">
+          <div className="tracking-wider font-normal font-domine w-full text-6xl  pt-4 box-border antialiased hover:text-[62px] transition-all duration-100 cursor-pointer ">
+            projetos
           </div>
         </div>
 

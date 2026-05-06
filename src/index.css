@@ -1,27 +1,13 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Nunito Sans";
-  src: url("../src/assets/fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC\,opsz\,wdth\,wght.ttf");
+:root {
+  color-scheme: light;
 }
 
-/* Importe diferentes pesos da Roboto Slab */
-@font-face {
-  font-family: "Roboto Slab";
-  src: url("./assets/fonts/Roboto_Slab/RobotoSlab-VariableFont_wght.ttf");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Bitcount Grid Single";
-  src: url("./assets/fonts/Bitcount_Grid_Single/static/BitcountGridSingle-Medium.ttf");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Bitcount Grid Single Light";
-  src: url("./assets/fonts/Bitcount_Grid_Single/static/BitcountGridSingle-Light.ttf");
-  font-weight: 300;
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 @theme {
@@ -29,10 +15,16 @@
   --font-robot: "Roboto Slab", serif;
   --font-bitcount: "Bitcount Grid Single", serif;
   --font-bitcount-ligth: "Bitcount Grid Single Light", serif;
+  --font-domine: "Domine", serif;
 }
 @keyframes wave {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @theme {
