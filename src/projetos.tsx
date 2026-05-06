@@ -2,6 +2,12 @@ import "./App.css";
 import { FaCircle } from "react-icons/fa";
 
 import imageOmsys from "./assets/images/Captura de tela 2026-05-04 163229.png";
+import {
+  SiJavascript,
+} from "react-icons/si";
+import { FaHtml5 } from "react-icons/fa";
+import { FaCss3Alt } from "react-icons/fa";
+
 function Projetos() {
   const projetos = [
     {
@@ -9,31 +15,37 @@ function Projetos() {
       description:
         "Painel administrativo com mais de 40 módulos funcionais, incluindo: controle de processos logísticos (cabotagem e rodoviário), emissão de CTes e notas fiscais, faturamentos, fluxo de caixa, contas bancárias, gestão de propostas comerciais, prospecção de clientes, jurídico, controladoria, organograma de equipe, biblioteca de documentos, ouvidoria interna, mural de comunicados e módulo de treinamentos.",
       link: imageOmsys,
+      stacks: [<SiJavascript />, <FaHtml5 />, <FaCss3Alt />],
     },
     {
       name: "",
       description: "",
       link: "",
+      stacks: [],
     },
     {
       name: "",
       description: "",
       link: "",
+      stacks: [],
     },
     {
       name: "",
       description: "",
       link: "",
+      stacks: [],
     },
     {
       name: "",
       description: "",
       link: "",
+      stacks: [],
     },
     {
       name: "",
       description: "",
       link: "",
+      stacks: [],
     },
   ];
   return (
@@ -73,6 +85,14 @@ function Projetos() {
                   className="absolute w-full h-full object-cover object-center top-0 left-0 opacity-20"
                 />
               )}
+
+              <div className="w-ful flex items-center justify-end gap-2 mt-auto">
+                {projeto.stacks.map((stack, index) => (
+                  <span key={index} className="text-2xl">
+                    {stack}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
