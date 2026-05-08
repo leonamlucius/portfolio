@@ -9,7 +9,7 @@ import qrCodeLink from "./assets/images/linkedin.jpg";
 function Contatos() {
   return (
     <>
-      <div className="bg-[#FFFFFF] w-full min-h-screen  justify-start items-center flex flex-col rounded-3xl">
+      <div className="bg-[#FFFFFF] w-full  justify-start items-center flex flex-col rounded-3xl">
         <div className="w-full flex items-start pt-3 pl-3 text-[#D71921]">
           <FaCircle />
         </div>

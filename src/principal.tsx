@@ -49,7 +49,7 @@ function Principal() {
     <>
       <div
         ref={targetPrincipal}
-        className="bg-[#FFFFFF] w-full min-h-screen  justify-start items-center flex flex-col rounded-3xl"
+        className="bg-[#FFFFFF] w-full justify-start items-center flex flex-col rounded-3xl"
       >
         <div className="w-full flex items-start pt-3 pl-3 text-[#D71921] ">
           <FaCircle />
@@ -60,7 +60,7 @@ function Principal() {
             sequence={["leonamlucius", 400, () => setShowIcon(true)]}
             wrapper="div"
             speed={30}
-            className="transition-all tracking-wider font-normal font-domine w-auto text-4xl sm:text-5xl md:text-6xl lg:text-7xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative"
+            className="transition-all tracking-wider font-normal font-domine w-auto text-4xl sm:text-9xl md:text-9xl lg:text-7xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative"
             repeat={0}
             cursor={false}
           />
