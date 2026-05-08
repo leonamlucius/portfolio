@@ -1,12 +1,57 @@
 import "./App.css";
 import { FaCircle } from "react-icons/fa";
+import { useInView } from "./hooks/useInView";
 
 import imageOmsys from "./assets/images/Captura de tela 2026-05-04 163229.png";
-import {
-  SiJavascript,
-} from "react-icons/si";
+import { SiJavascript } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
+
+type Projeto = {
+  name: string;
+  description: string;
+  link: string;
+  stacks: React.ReactElement[];
+};
+
+function ProjetoCard({ projeto }: { projeto: Projeto }) {
+  const [cardRef, cardInView] = useInView(0.3);
+  return (
+    <div
+      ref={cardRef}
+      className={`bg-[#000000] text-white h-80 p-7 flex flex-col gap-3 overflow-clip cursor-pointer transition-all duration-200 hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative ${cardInView ? "shadow-[-6px_6px_0px_0px_#D71921] z-10" : ""}`}
+    >
+      <h2 className="font-robot tracking-wider italic text-2xl font-light">
+        {projeto.name}
+      </h2>
+      <p className="font-robot text-base h-40 overflow-hidden">
+        {projeto.description}
+      </p>
+      {projeto.link && (
+        <a
+          href={projeto.link}
+          className="text-[#D71921] font-robot text-sm hover:underline"
+        >
+          Ver Projeto
+        </a>
+      )}
+      {projeto.link && (
+        <img
+          src={projeto.link}
+          alt={projeto.name}
+          className="absolute w-full h-full object-cover object-center top-0 left-0 opacity-20"
+        />
+      )}
+      <div className="w-ful flex items-center justify-end gap-2 mt-auto">
+        {projeto.stacks.map((stack, index) => (
+          <span key={index} className="text-2xl">
+            {stack}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 function Projetos() {
   const projetos = [
@@ -62,38 +107,8 @@ function Projetos() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full p-5 box-border">
-          {projetos.map((projeto) => (
-            <div className="bg-[#000000] text-white h-80 p-7 flex flex-col gap-3 overflow-clip cursor-pointer transition-all duration-200 hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
-              <h2 className="font-robot tracking-wider italic text-2xl font-light">
-                {projeto.name}
-              </h2>
-              <p className="font-robot text-base h-40 overflow-hidden">
-                {projeto.description}
-              </p>
-              {projeto.link && (
-                <a
-                  href={projeto.link}
-                  className="text-[#D71921] font-robot text-sm hover:underline"
-                >
-                  Ver Projeto
-                </a>
-              )}
-              {projeto.link && (
-                <img
-                  src={projeto.link}
-                  alt={projeto.name}
-                  className="absolute w-full h-full object-cover object-center top-0 left-0 opacity-20"
-                />
-              )}
-
-              <div className="w-ful flex items-center justify-end gap-2 mt-auto">
-                {projeto.stacks.map((stack, index) => (
-                  <span key={index} className="text-2xl">
-                    {stack}
-                  </span>
-                ))}
-              </div>
-            </div>
+          {projetos.map((projeto, index) => (
+            <ProjetoCard key={index} projeto={projeto} />
           ))}
         </div>
       </div>

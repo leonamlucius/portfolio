@@ -66,7 +66,7 @@ const Body = forwardRef<BodyRef, BodyProps>(({ onSectionChange }, ref) => {
     <>
       <div
         ref={scrollContainerRef}
-        className="w-full items-center justify-start flex flex-col overflow-y-clip gap-5"
+        className="w-full items-center justify-start flex flex-col gap-5"
       >
         <div ref={targetPrincipal} className="w-full">
           <Principal />

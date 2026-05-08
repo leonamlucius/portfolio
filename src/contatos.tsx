@@ -20,9 +20,9 @@ function Contatos() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-3 w-full p-1.5 mt-5">
+        <div className="flex flex-col md:flex-row items-start gap-3 w-full p-1.5 mt-5">
           <div
-            className="flex items-center justify-space gap-7  w-full"
+            className="h-auto w-full flex items-center justify-space gap-7 md:h-40"
             id="divIcons"
           >
             <FaLinkedin className="text-4xl md:text-6xl text-black" />
@@ -44,7 +44,7 @@ function Contatos() {
           </div>
 
           <div
-            className="flex items-center justify-start gap-7  w-full"
+            className="h-auto w-full flex items-center justify-space gap-7 md:h-40"
             id="divIcons"
           >
             <FaSquareGithub className="text-4xl md:text-6xl text-black" />
@@ -66,7 +66,7 @@ function Contatos() {
           </div>
 
           <div
-            className="flex items-center justify-start gap-7   w-full"
+            className="h-auto w-full flex items-center justify-space gap-7 md:h-40"
             id="divIcons"
           >
             <MdAlternateEmail className="text-4xl md:text-6xl text-black" />
@@ -78,6 +78,8 @@ function Contatos() {
             >
               Email
             </a>
+
+          
           </div>
         </div>
       </div>
