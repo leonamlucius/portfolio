@@ -21,7 +21,7 @@ import fotoPerfil from "./assets/images/crt.png";
 function Principal() {
   const targetPrincipal = useRef<HTMLDivElement>(null);
   const [showIcon, setShowIcon] = useState(false);
-  const [blackDivRef, blackDivInView] = useInView(0.5);
+  const [blackDivRef] = useInView(0.5);
 
   const divIcons = document.getElementById("divIcons");
 
