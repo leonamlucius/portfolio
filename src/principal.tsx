@@ -16,7 +16,7 @@ import {
 import { TypeAnimation } from "react-type-animation";
 import meuIcone from "./assets/images/victory-svgrepo-com.svg";
 import divider from "./assets/images/divider.svg";
-import fotoPerfil from "./assets/images/[t×6s]_[1e06b1f3-b8bf-4c4a-a389-857e1b6e85cd]_2026-05-08_16-14-47.png";
+import fotoPerfil from "./assets/images/crt.png";
 
 function Principal() {
   const targetPrincipal = useRef<HTMLDivElement>(null);
@@ -74,8 +74,8 @@ function Principal() {
           />
         </div>
 
-        <div className="relative w-full h-auto flex flex-col  box-border  text-xl pt-6 gap-10 md:flex-row items-center justify-start p-3 md:gap-25">
-          <p className="transition-all duration-200 ease-out font-domine m-0 tracking-wider w-full md:w-[60%] text-justify text-base md:text-xl h-auto hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
+        <div className="relative w-full h-auto flex flex-col-reverse  box-border  text-xl pt-6 gap-10 md:flex-row items-center justify-start p-3 md:gap-25">
+          <p className="slide-in-left transition-all duration-200 ease-out font-domine m-0 tracking-wider w-full md:w-[60%] text-justify text-base md:text-xl h-auto hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
             Formado em Análise e Desenvolvimento de Sistemas, tenho experiência
             em desenvolvimento de software, com foco em JavaScript, TypeScript,
             React, Angular, porém, com experiência em Spring(Java) e
@@ -112,7 +112,7 @@ function Principal() {
 
           <div
             ref={blackDivRef}
-            className={`w-[300px] h-[300px] flex items-center justify-center border-2 border-dotted overflow-clip transition-all duration-200 hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative ${blackDivInView ? "shadow-[-6px_6px_0px_0px_#D71921] z-10" : ""}`}
+            className={`w-[300px] h-[300px] flex items-center justify-center overflow-clip transition-all`}
           >
             <img
               src={fotoPerfil}
@@ -135,7 +135,7 @@ function Principal() {
           </div>
 
           <div
-            className="w-full h-auto gap-3 flex items-start justify-start antialiased font-robot text-xl indent-3 pt-6"
+            className=" slide-in-left w-full h-auto gap-3 flex items-start justify-start antialiased font-robot text-xl indent-3 pt-6"
             id="divIcons"
           >
             <SiJavascript className="text-4xl text-[#1B1B1D] hover:text-yellow-400 hover: " />
