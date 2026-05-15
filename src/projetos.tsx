@@ -4,10 +4,12 @@ import { FaCircle } from "react-icons/fa";
 import { useInView } from "./hooks/useInView";
 
 import imageOmsys from "./assets/images/Captura de tela 2026-05-04 163229.png";
+import imageAnote from "./assets/images/Captura de tela 2026-05-15 122816.png";
 import { SiJavascript } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaRegWindowClose } from "react-icons/fa";
+import { FaAngular } from "react-icons/fa";
 
 type Projeto = {
   name: string;
@@ -40,7 +42,17 @@ function ProjetoModal({
             <FaRegWindowClose />
           </button>
         </div>
-        <h2 className="font-robot tracking-wider italic text-2xl font-light">{projeto.name}</h2>
+        <h2 className="font-robot tracking-wider italic text-2xl font-light">
+          {projeto.name}
+        </h2>
+
+        {projeto.link && (
+          <img
+            src={projeto.link}
+            alt={projeto.name}
+            className="w-full mt-4 object-cover max-h-64"
+          />
+        )}
 
         <p className="font-robot text-sm mt-4">{projeto.description}</p>
       </div>
@@ -106,10 +118,10 @@ function Projetos() {
       stacks: [<SiJavascript />, <FaHtml5 />, <FaCss3Alt />],
     },
     {
-      name: "",
-      description: "",
-      link: "",
-      stacks: [],
+      name: "anote.",
+      description: "(Em desenvolvimento) Aplicação de anotações e organização pessoal, com funcionalidades como criação de notas, organização por pastas, marcação de favoritos, compartilhamento de notas e sincronização em tempo real entre dispositivos.",
+      link: imageAnote,
+      stacks: [<FaAngular />],
     },
     {
       name: "",
