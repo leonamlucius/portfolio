@@ -133,7 +133,7 @@ function Projetos() {
         </div>
 
         <div className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
-          <div className="transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl pt-2 box-border antialiased hover:scale-[1.02] hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative">
+          <div className="border-b-2 border-solid border-[#82fb7e] transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl pt-2 box-border antialiased hover:scale-[1.02]">
             projetos
           </div>
         </div>
