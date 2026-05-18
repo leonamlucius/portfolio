@@ -1,5 +1,8 @@
 * {
   scrollbar-color: #1b1b1d transparent;
+}
+
+body {
   background-color: #3e403d;
   color: #82fb7e;
 }
@@ -13,6 +16,58 @@
   }
 }
 
+@keyframes wrapperOut {
+  from {
+    clip-path: inset(0 0 0 100% round 999px);
+  }
+  to {
+    clip-path: inset(0 0 0 0% round 2px);
+  }
+}
+
+@keyframes wrapperIn {
+  from {
+    clip-path: inset(0 0 0 0% round 2px);
+  }
+  to {
+    clip-path: inset(0 0 0 100% round 999px);
+  }
+}
+
+@keyframes wrapperTopOut {
+  from {
+    clip-path: inset(100% 0 0 0 round 999px);
+  }
+  to {
+    clip-path: inset(0% 0 0 0 round 2px);
+  }
+}
+
+@keyframes wrapperTopIn {
+  from {
+    clip-path: inset(0% 0 0 0 round 2px);
+  }
+  to {
+    clip-path: inset(100% 0 0 0 round 999px);
+  }
+}
+
 .slide-in-left {
   animation: slideInLeft 0.7s ease-out both;
+}
+.socialOut {
+  animation: wrapperTopOut 0.5s ease-out both;
+}
+.socialIn {
+  animation: wrapperTopIn 0.5s ease-out both;
+}
+
+/* Desktop: anima da direita pra esquerda */
+@media (min-width: 768px) {
+  .socialOut {
+    animation: wrapperOut 0.5s ease-out both;
+  }
+  .socialIn {
+    animation: wrapperIn 0.5s ease-out both;
+  }
 }

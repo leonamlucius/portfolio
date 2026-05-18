@@ -27,11 +27,11 @@ function ProjetoModal({
   console.log(projeto);
   return (
     <div
-      className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+      className="fixed inset-0 bg-[#3e403d] flex items-center justify-center z-50"
       onClick={onClose}
     >
       <div
-        className="bg-white p-2 w-11/12 md:w-1/2 lg:w-1/3"
+        className="bg-[#3e403d] p-2 w-11/12 md:w-1/2 lg:w-1/3"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="w-full flex items-center justify-end ">
@@ -69,7 +69,7 @@ function ProjetoCard({ projeto }: { projeto: Projeto }) {
       )}
       <div
         ref={cardRef}
-        className={`bg-[#82fb7e] text-white h-80 p-7 flex flex-col gap-3 overflow-clip cursor-pointer transition-all duration-200 hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative ${cardInView ? "shadow-[-3px_3px_0px_0px_#82fb7e] z-10" : ""}`}
+        className={`text-[#82fb7e] h-80 p-7 flex flex-col gap-3 overflow-clip cursor-pointer transition-all duration-200 hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative ${cardInView ? "shadow-[-3px_3px_0px_0px_#82fb7e] z-10" : ""}`}
       >
         <h2 className="font-robot tracking-wider italic text-2xl font-light">
           {projeto.name}
@@ -80,7 +80,7 @@ function ProjetoCard({ projeto }: { projeto: Projeto }) {
         {projeto.link && (
           <a
             href={projeto.link}
-            className="text-[#D71921] font-robot text-sm hover:underline"
+            className="font-robot text-sm hover:underline"
             onClick={(e) => {
               e.preventDefault();
               setModalAberto(true);
@@ -127,13 +127,13 @@ function Projetos() {
   ];
   return (
     <>
-      <div className="bg-[#FFFFFF] w-full  justify-start items-center flex flex-col rounded-3xl overflow-clip">
-        <div className="w-full flex items-start pt-3 pl-3 text-[#D71921]">
+      <div className="bg-transparent w-full  justify-start items-center flex flex-col rounded-3xl overflow-clip">
+        <div className="w-full flex items-start pt-3 pl-3 text-[#82fb7e] ">
           <FaCircle />
         </div>
 
         <div className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
-          <div className="transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl pt-2 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative">
+          <div className="transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl pt-2 box-border antialiased hover:scale-[1.02] hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative">
             projetos
           </div>
         </div>

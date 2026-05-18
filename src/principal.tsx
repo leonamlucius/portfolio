@@ -64,7 +64,7 @@ function Principal() {
             sequence={["leonamlucius", 400, () => setShowIcon(true)]}
             wrapper="div"
             speed={30}
-            className="transition-all font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl lg:text-7xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative"
+            className="transition-all font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl lg:text-7xl pt-4 box-border antialiased hover:scale-[1.02] hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative"
             repeat={0}
             cursor={false}
           />
@@ -75,7 +75,7 @@ function Principal() {
         </div>
 
         <div className="relative w-full h-auto flex flex-col-reverse  box-border text-xl  gap-1 md:flex-row items-center justify-start p-2 md:gap-4">
-          <p className="font-light slide-in-left transition-all duration-200 ease-out font-domine m-0 w-full md:w-[70%] text-justify text-base md:text-xl h-auto hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative">
+          <p className="font-light slide-in-left transition-all duration-200 ease-out font-domine m-0 w-full md:w-[70%] text-justify text-base md:text-xl h-auto hover:scale-[1.02] hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative">
             Formado em Análise e Desenvolvimento de Sistemas, tenho experiência
             em desenvolvimento de software, com foco em JavaScript, TypeScript,
             React, Angular, porém, com experiência em Spring(Java) e
@@ -128,7 +128,7 @@ function Principal() {
               sequence={["minhas stacks", 5500]}
               wrapper="div"
               speed={30}
-              className="transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-7xl lg:text-7xl pt-2 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative"
+              className="transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-7xl lg:text-7xl pt-2 box-border antialiased hover:scale-[1.02] hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative"
               repeat={0}
               cursor={false}
             />
@@ -145,7 +145,7 @@ function Principal() {
             <SiPython className="text-4xl text-[#82fb7e] hover:text-yellow-500" />
             <SiMysql className="text-4xl text-[#82fb7e] hover:text-blue-500" />
             <SiFastapi className="text-4xl text-[#82fb7e] hover:text-green-500" />
-            <SiAngular className="text-4xl text-[#82fb7e] hover:text-[#82fb7e] " />
+            <SiAngular className="text-4xl text-[#82fb7e] hover:text-red-600 " />
           </div>
         </div>
       </div>
