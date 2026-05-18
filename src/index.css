@@ -10,13 +10,44 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+@font-face {
+  font-family: "EditorialNew-UltralightItalic";
+  src: url("./assets/fonts/Editoral_New/EditorialNew-UltralightItalic.otf")
+    format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EditorialNew-Regular";
+  src: url("./assets/fonts/Editoral_New/EditorialNew-Regular.otf")
+    format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "EditorialNew-Ultralight";
+  src: url("./assets/fonts/Editoral_New/Editorial%20New-Ultralight.otf")
+    format("opentype");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
 @theme {
   --font-family-base: "Nunito Sans", sans-serif;
   --font-robot: "Roboto Slab", serif;
   --font-bitcount: "Bitcount Grid Single", serif;
   --font-bitcount-ligth: "Bitcount Grid Single Light", serif;
   --font-domine: "Domine", serif;
+  --font-editorial-new-ultralight-italic:
+    "EditorialNew-UltralightItalic", serif;
+  --font-editorial-new-regular: "EditorialNew-Regular", serif;
+  --font-editorial-new-ultralight: "EditorialNew-Ultralight", serif;
 }
+
 @keyframes wave {
   0%,
   100% {

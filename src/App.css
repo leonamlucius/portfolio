@@ -1,5 +1,7 @@
 * {
   scrollbar-color: #1b1b1d transparent;
+  background-color: #3e403d;
+  color: #82fb7e;
 }
 
 @keyframes slideInLeft {

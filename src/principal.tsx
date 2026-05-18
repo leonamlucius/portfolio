@@ -14,8 +14,8 @@ import {
 } from "react-icons/si";
 // import fotoPerfil from "./assets/images/tuff-baby-ai-baby.gif";
 import { TypeAnimation } from "react-type-animation";
-import meuIcone from "./assets/images/victory-svgrepo-com.svg";
-import divider from "./assets/images/divider.svg";
+import MeuIcone from "./assets/images/victory-svgrepo-com.svg?react";
+import divider from "./assets/images/divider.png";
 import fotoPerfil from "./assets/images/crt.png";
 
 function Principal() {
@@ -53,9 +53,9 @@ function Principal() {
     <>
       <div
         ref={targetPrincipal}
-        className="bg-[#FFFFFF] w-full justify-start items-center flex flex-col rounded-3xl"
+        className="bg-[#3e403d] w-full justify-start items-center flex flex-col rounded-3xl"
       >
-        <div className="w-full flex items-start pt-3 pl-3 text-[#D71921] ">
+        <div className="w-full flex items-start pt-3 pl-3 text-[#82fb7e] ">
           <FaCircle />
         </div>
 
@@ -64,18 +64,18 @@ function Principal() {
             sequence={["leonamlucius", 400, () => setShowIcon(true)]}
             wrapper="div"
             speed={30}
-            className="transition-all tracking-wider font-normal font-domine w-auto text-4xl sm:text-5xl md:text-6xl lg:text-7xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative"
+            className="transition-all font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl lg:text-7xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative"
             repeat={0}
             cursor={false}
           />
-          <img
-            src={meuIcone}
+          <MeuIcone
+            fill="#82fb7e"
             className={`w-8 h-8 transition-all duration-100 ${showIcon ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
           />
         </div>
 
-        <div className="relative w-full h-auto flex flex-col-reverse  box-border  text-xl pt-6 gap-10 md:flex-row items-center justify-start p-3 md:gap-25">
-          <p className="slide-in-left transition-all duration-200 ease-out font-domine m-0 tracking-wider w-full md:w-[60%] text-justify text-base md:text-xl h-auto hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
+        <div className="relative w-full h-auto flex flex-col-reverse  box-border text-xl  gap-1 md:flex-row items-center justify-start p-2 md:gap-4">
+          <p className="font-light slide-in-left transition-all duration-200 ease-out font-domine m-0 w-full md:w-[70%] text-justify text-base md:text-xl h-auto hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative">
             Formado em Análise e Desenvolvimento de Sistemas, tenho experiência
             em desenvolvimento de software, com foco em JavaScript, TypeScript,
             React, Angular, porém, com experiência em Spring(Java) e
@@ -90,7 +90,7 @@ function Principal() {
 
           <div className="hidden md:flex self-stretch w-10 overflow-hidden items-center justify-center">
             <div
-              className="w-[2000px] h-10 shrink-0 invert brightness-190"
+              className="w-[2000px] h-10 shrink-0"
               style={{
                 backgroundImage: `url(${divider})`,
                 backgroundRepeat: "repeat-x",
@@ -102,7 +102,7 @@ function Principal() {
 
           {/* visível só no mobile (flex-col) */}
           <div
-            className="flex align-center justify-center md:hidden w-full h-10 invert brightness-190"
+            className="flex align-center justify-center md:hidden w-full h-10"
             style={{
               backgroundImage: `url(${divider})`,
               backgroundRepeat: "repeat-x",
@@ -123,12 +123,12 @@ function Principal() {
         </div>
 
         <div className="w-full h-auto flex flex-col  justify-start  items-start p-1.5  box-border antialiased font-robot text-xl">
-          <div className="transition-all tracking-wider font-normal font-domine w-auto flex justify-start text-4xl  box-border antialiased">
+          <div className="transition-all font-normal w-auto flex justify-start text-4xl  box-border antialiased">
             <TypeAnimation
               sequence={["minhas stacks", 5500]}
               wrapper="div"
               speed={30}
-              className="tracking-wider font-normal font-domine w-auto text-4xl sm:text-5xl md:text-6xl lg:text-7xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative"
+              className="transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-7xl lg:text-7xl pt-2 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative"
               repeat={0}
               cursor={false}
             />
@@ -138,14 +138,14 @@ function Principal() {
             className=" slide-in-left w-full h-auto gap-3 flex items-start justify-start antialiased font-robot text-xl indent-3 pt-6"
             id="divIcons"
           >
-            <SiJavascript className="text-4xl text-[#1B1B1D] hover:text-yellow-400 hover: " />
-            <SiTypescript className="text-4xl text-[#1B1B1D] hover:text-blue-600" />
-            <SiReact className="text-4xl text-[#1B1B1D] hover:text-cyan-400" />
-            <SiSpring className="text-4xl text-[#1B1B1D] hover:text-green-600" />
-            <SiPython className="text-4xl text-[#1B1B1D] hover:text-yellow-500" />
-            <SiMysql className="text-4xl text-[#1B1B1D] hover:text-blue-500" />
-            <SiFastapi className="text-4xl text-[#1B1B1D] hover:text-green-500" />
-            <SiAngular className="text-4xl text-[#1B1B1D] hover:text-red-600 " />
+            <SiJavascript className="text-4xl text-[#82fb7e] hover:text-yellow-400 hover: " />
+            <SiTypescript className="text-4xl text-[#82fb7e] hover:text-blue-600" />
+            <SiReact className="text-4xl text-[#82fb7e] hover:text-cyan-400" />
+            <SiSpring className="text-4xl text-[#82fb7e] hover:text-green-600" />
+            <SiPython className="text-4xl text-[#82fb7e] hover:text-yellow-500" />
+            <SiMysql className="text-4xl text-[#82fb7e] hover:text-blue-500" />
+            <SiFastapi className="text-4xl text-[#82fb7e] hover:text-green-500" />
+            <SiAngular className="text-4xl text-[#82fb7e] hover:text-[#82fb7e] " />
           </div>
         </div>
       </div>

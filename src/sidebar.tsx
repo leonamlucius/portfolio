@@ -82,7 +82,7 @@ function sideBar({ bodyRef, activeSection }: SideBarProps) {
 
   return (
     <>
-      <div className="bg-[#FFFFFF] text-white w-70 h-auto flex flex-col items-start justify-between p-2.5 box-border gap-2 font-semibold rounded-3xl">
+      <div className="bg-[#3e403d] text-[#82fb7e] w-70 h-auto flex flex-col items-start justify-between p-2.5 box-border gap-2 font-semibold rounded-3xl">
         <div className="flex flex-col items-start gap-2 w-full">
           {menuItems.map((item) => (
             <li
@@ -90,7 +90,7 @@ function sideBar({ bodyRef, activeSection }: SideBarProps) {
               className={`font-robot tracking-wider  sidebar-item flex items-center gap-3 p-2 font-noraml justify-center w-full rounded-3xl transition hover:-translate-y-1 cursor-pointer  
             ${
               activeSection === item.id
-                ? "bg-transparent text-black  italic border-2 border-[#76757A] border-dotted"
+                ? "bg-transparent text-[#82fb7e]  italic border-2 border-[#82fb7e] border-dotted"
                 : "bg-[#1B1B1D]"
             }`}
               onClick={() => handleItemClick(item.id)}
@@ -105,12 +105,12 @@ function sideBar({ bodyRef, activeSection }: SideBarProps) {
 
           <div className="w-full flex items-center justify-center gap-2 p-5 box-border">
             {activeSection !== "principal" ? (
-              <p className="font-bitcount text-black w-full text-[24px] box-border antialiased font-normal whitespace-nowrap">
+              <p className="font-bitcount text-[#82fb7e] w-full text-[24px] box-border antialiased font-normal whitespace-nowrap">
                 {name.split("").map((letra, index) => (
                   <span
                     key={index}
                     className={`inline-block font-bitcount text-[24px] transition-all duration-200 hover: cursor-pointer ${
-                      activeIndex === index ? "scale-90" : "text-black"
+                      activeIndex === index ? "scale-90" : "text-[#82fb7e]"
                     }`}
                     onClick={clickToprincipal}
                   >
@@ -121,7 +121,7 @@ function sideBar({ bodyRef, activeSection }: SideBarProps) {
                 ))}
               </p>
             ) : (
-              <span className="font-bitcount text-black text-[24px] transition-all duration-300">
+              <span className="font-bitcount text-[#82fb7e] text-[24px] transition-all duration-300">
                 {emoticons[emojiIndex]}
               </span>
             )}

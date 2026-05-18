@@ -9,13 +9,13 @@ import qrCodeLink from "./assets/images/linkedin.jpg";
 function Contatos() {
   return (
     <>
-      <div className="bg-[#FFFFFF] w-full  justify-start items-center flex flex-col rounded-3xl">
-        <div className="w-full flex items-start pt-3 pl-3 text-[#D71921]">
+      <div className="bg-[#3e403d] w-full  justify-start items-center flex flex-col rounded-3xl">
+        <div className="w-full flex items-start pt-3 pl-3 text-[#82fb7e]">
           <FaCircle />
         </div>
 
         <div className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
-          <div className="transition-all tracking-wider font-normal font-domine w-auto text-4xl sm:text-5xl md:text-6xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
+          <div className="transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl pt-2 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative">
             contatos
           </div>
         </div>
@@ -25,9 +25,9 @@ function Contatos() {
             className="h-auto w-full flex items-center justify-space gap-7 md:h-40"
             id="divIcons"
           >
-            <FaLinkedin className="text-4xl md:text-6xl text-black" />
+            <FaLinkedin className="text-4xl md:text-6xl text-[#82fb7e]" />
             <a
-              className="w-auto no-underline font-robot tracking-wider text-black text-xl md:text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
+              className="w-auto no-underline font-robot tracking-wider text-[#82fb7e] text-xl md:text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
               href="https://www.linkedin.com/in/leonamlucius/"
               target="_blank"
               rel="noopener noreferrer"
@@ -47,9 +47,9 @@ function Contatos() {
             className="h-auto w-full flex items-center justify-space gap-7 md:h-40"
             id="divIcons"
           >
-            <FaSquareGithub className="text-4xl md:text-6xl text-black" />
+            <FaSquareGithub className="text-4xl md:text-6xl text-[#82fb7e]" />
             <a
-              className="w-auto no-underline font-robot tracking-wider text-black text-xl md:text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
+              className="w-auto no-underline font-robot tracking-wider text-[#82fb7e] text-xl md:text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
               href="https://github.com/leonamlucius"
               target="_blank"
               rel="noopener noreferrer"
@@ -69,17 +69,15 @@ function Contatos() {
             className="h-auto w-full flex items-center justify-space gap-7 md:h-40"
             id="divIcons"
           >
-            <MdAlternateEmail className="text-4xl md:text-6xl text-black" />
+            <MdAlternateEmail className="text-4xl md:text-6xl text-[#82fb7e]" />
             <a
-              className="w-auto no-underline font-robot tracking-wider text-black text-xl md:text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
+              className="w-auto no-underline font-robot tracking-wider text-[#82fb7e] text-xl md:text-3xl font-normal italic transition-all hover:underline hover:decoration-dotted"
               href="mailto:leonam253@gmail.com"
               target="_blank"
               rel="noopener noreferrer"
             >
               Email
             </a>
-
-          
           </div>
         </div>
       </div>

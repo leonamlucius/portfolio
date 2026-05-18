@@ -69,7 +69,7 @@ function ProjetoCard({ projeto }: { projeto: Projeto }) {
       )}
       <div
         ref={cardRef}
-        className={`bg-[#000000] text-white h-80 p-7 flex flex-col gap-3 overflow-clip cursor-pointer transition-all duration-200 hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative ${cardInView ? "shadow-[-6px_6px_0px_0px_#D71921] z-10" : ""}`}
+        className={`bg-[#82fb7e] text-white h-80 p-7 flex flex-col gap-3 overflow-clip cursor-pointer transition-all duration-200 hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative ${cardInView ? "shadow-[-3px_3px_0px_0px_#82fb7e] z-10" : ""}`}
       >
         <h2 className="font-robot tracking-wider italic text-2xl font-light">
           {projeto.name}
@@ -119,44 +119,21 @@ function Projetos() {
     },
     {
       name: "anote.",
-      description: "(Em desenvolvimento) Aplicação de anotações e organização pessoal, com funcionalidades como criação de notas, organização por pastas, marcação de favoritos, compartilhamento de notas e sincronização em tempo real entre dispositivos.",
+      description:
+        "(Em desenvolvimento) Aplicação de anotações e organização pessoal, com funcionalidades como criação de notas, organização por pastas, marcação de favoritos, compartilhamento de notas e sincronização em tempo real entre dispositivos.",
       link: imageAnote,
       stacks: [<FaAngular />],
-    },
-    {
-      name: "",
-      description: "",
-      link: "",
-      stacks: [],
-    },
-    {
-      name: "",
-      description: "",
-      link: "",
-      stacks: [],
-    },
-    {
-      name: "",
-      description: "",
-      link: "",
-      stacks: [],
-    },
-    {
-      name: "",
-      description: "",
-      link: "",
-      stacks: [],
     },
   ];
   return (
     <>
-      <div className="bg-[#FFFFFF] w-full min-h-screen  justify-start items-center flex flex-col rounded-3xl overflow-clip">
+      <div className="bg-[#FFFFFF] w-full  justify-start items-center flex flex-col rounded-3xl overflow-clip">
         <div className="w-full flex items-start pt-3 pl-3 text-[#D71921]">
           <FaCircle />
         </div>
 
         <div className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
-          <div className="transition-all tracking-wider font-normal font-domine w-auto text-4xl sm:text-5xl md:text-6xl pt-4 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-6px_6px_0px_0px_#D71921] hover:z-10 relative">
+          <div className="transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl pt-2 box-border antialiased hover:scale-[1.02] hover:bg-[#1B1B1D] hover:text-white hover:shadow-[-3px_3px_0px_0px_#82fb7e] hover:z-10 relative">
             projetos
           </div>
         </div>
