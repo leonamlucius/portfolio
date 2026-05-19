@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useInView } from "./hooks/useInView";
 import { FaCircle } from "react-icons/fa";
 import "./App.css";
@@ -18,10 +18,26 @@ import MeuIcone from "./assets/images/victory-svgrepo-com.svg?react";
 import divider from "./assets/images/divider.png";
 import fotoPerfil from "./assets/images/crt.png";
 
-function Principal() {
+interface PrincipalProps {
+  onTitleVisibilityChange?: (visible: boolean) => void;
+}
+function Principal({ onTitleVisibilityChange }: PrincipalProps) {
   const targetPrincipal = useRef<HTMLDivElement>(null);
   const [showIcon, setShowIcon] = useState(false);
   const [blackDivRef] = useInView(0.5);
+  const targetTitle = useRef<HTMLDivElement>(null);
+
+  
+useEffect(() => {
+  if (!targetTitle.current || !onTitleVisibilityChange) return;
+  const observer = new IntersectionObserver(
+    ([entry]) => onTitleVisibilityChange(entry.isIntersecting),
+    { threshold: 0.5 }
+  );
+  observer.observe(targetTitle.current);
+  return () => observer.disconnect();
+}, [onTitleVisibilityChange]);
+  
 
   const divIcons = document.getElementById("divIcons");
 
@@ -59,7 +75,7 @@ function Principal() {
           <FaCircle />
         </div>
 
-        <div className="w-full h-auto flex items-center  justify-start p-1.5 antialiased ">
+        <div ref={targetTitle} className="w-full h-auto flex items-center  justify-start p-1.5 antialiased ">
           <TypeAnimation
             sequence={["leonamlucius", 400, () => setShowIcon(true)]}
             wrapper="div"
@@ -74,7 +90,7 @@ function Principal() {
           />
         </div>
 
-        <div className="relative w-full h-auto flex flex-col-reverse  box-border text-xl  gap-1 md:flex-row items-center justify-start p-2 md:gap-4">
+        <div className="w-full h-auto flex flex-col-reverse  box-border text-xl  gap-1 md:flex-row items-center justify-start p-2 md:gap-4">
           <p className="font-light slide-in-left transition-all duration-200 ease-out font-domine m-0 w-full md:w-[70%] text-justify text-base md:text-xl h-auto">
             Formado em Análise e Desenvolvimento de Sistemas, tenho experiência
             em desenvolvimento de software, com foco em JavaScript, TypeScript,
