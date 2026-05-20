@@ -70,6 +70,32 @@ body {
   }
 }
 
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(50deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-50deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.hover-shake:hover {
+  animation: shake 0.5s ease-in-out;
+}
+
+.shake{
+  animation: shake 0.5s ease-in-out;
+}
+
 .slide-in-left {
   animation: slideInLeft 0.7s ease-out both;
 }

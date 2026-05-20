@@ -99,7 +99,7 @@ const Body = forwardRef<BodyRef, BodyProps>(({ onSectionChange }, ref) => {
 
         <MeuIcone
             fill="#82fb7e"
-            className={`w-6 h-6 transition-all mb-1`}
+            className={`w-6 h-6 transition-all mb-1 hover-shake`}
           />
       </div>
 
