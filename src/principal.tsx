@@ -20,13 +20,19 @@ import fotoPerfil from "./assets/images/crt.png";
 
 interface PrincipalProps {
   onTitleVisibilityChange?: (visible: boolean) => void;
+  onStacksVisibilityChange?: (visible: boolean, aboveViewport: boolean) => void;
   lang?: "pt" | "en";
 }
-function Principal({ onTitleVisibilityChange, lang = "pt" }: PrincipalProps) {
+function Principal({
+  onTitleVisibilityChange,
+  onStacksVisibilityChange,
+  lang = "pt",
+}: PrincipalProps) {
   const targetPrincipal = useRef<HTMLDivElement>(null);
   const [showIcon, setShowIcon] = useState(false);
   const [blackDivRef] = useInView(0.5);
   const targetTitle = useRef<HTMLDivElement>(null);
+  const targetStacks = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!targetTitle.current || !onTitleVisibilityChange) return;
@@ -37,6 +43,20 @@ function Principal({ onTitleVisibilityChange, lang = "pt" }: PrincipalProps) {
     observer.observe(targetTitle.current);
     return () => observer.disconnect();
   }, [onTitleVisibilityChange]);
+
+  useEffect(() => {
+    if (!targetStacks.current || !onStacksVisibilityChange) return;
+    const observer = new IntersectionObserver(
+      ([entry]) =>
+        onStacksVisibilityChange(
+          entry.isIntersecting,
+          entry.boundingClientRect.bottom < 0,
+        ),
+      { threshold: 0 },
+    );
+    observer.observe(targetStacks.current);
+    return () => observer.disconnect();
+  }, [onStacksVisibilityChange]);
 
   const divIcons = document.getElementById("divIcons");
 
@@ -133,7 +153,10 @@ function Principal({ onTitleVisibilityChange, lang = "pt" }: PrincipalProps) {
           </div>
         </div>
 
-        <div className="w-full h-auto flex flex-col  justify-start  items-start p-1.5  box-border antialiased font-robot text-xl">
+        <div
+          ref={targetStacks}
+          className="w-full h-auto flex flex-col  justify-start  items-start p-1.5  box-border antialiased font-robot text-xl"
+        >
           <div className="transition-all font-normal w-auto flex justify-start text-4xl  box-border antialiased">
             <TypeAnimation
               sequence={[lang === "pt" ? "minhas stacks" : "my stacks", 5500]}

@@ -14,7 +14,6 @@ import { FaSquareGithub } from "react-icons/fa6";
 import { MdAlternateEmail } from "react-icons/md";
 import MeuIcone from "./assets/images/victory-svgrepo-com.svg?react";
 
-
 export interface BodyRef {
   scrollToPrincipal: () => void;
   scrollToProjetos: () => void;
@@ -32,10 +31,43 @@ const Body = forwardRef<BodyRef, BodyProps>(({ onSectionChange }, ref) => {
   const lang = navigator.language.startsWith("pt") ? "pt" : "en";
 
   console.log("Idioma do navegador:", lang);
-  
+
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [contatosInView, setContatosInView] = useState(false);
   const [tittleInView, setTitleInView] = useState(false);
+  const [showStacks, setShowStacks] = useState<boolean | null>(null);
+  const [showProjetos, setShowProjetos] = useState<boolean | null>(null);
+  const stacksSeenRef = useRef(false);
+  const projetosSeenRef = useRef(false);
+  const stacksShownRef = useRef(false);
+  const projetosShownRef = useRef(false);
+
+  const handleStacksChange = (visible: boolean, aboveViewport: boolean) => {
+    if (visible) {
+      stacksSeenRef.current = true;
+      if (stacksShownRef.current) setShowStacks(false);
+    } else {
+      if (aboveViewport && stacksSeenRef.current) {
+        stacksShownRef.current = true;
+        setShowStacks(true);
+      } else if (stacksShownRef.current) {
+        setShowStacks(false);
+      }
+    }
+  };
+  const handleProjetosChange = (visible: boolean, aboveViewport: boolean) => {
+    if (visible) {
+      projetosSeenRef.current = true;
+      if (projetosShownRef.current) setShowProjetos(false);
+    } else {
+      if (aboveViewport && projetosSeenRef.current) {
+        projetosShownRef.current = true;
+        setShowProjetos(true);
+      } else if (projetosShownRef.current) {
+        setShowProjetos(false);
+      }
+    }
+  };
 
   useImperativeHandle(ref, () => ({
     scrollToPrincipal: () => {
@@ -95,15 +127,39 @@ const Body = forwardRef<BodyRef, BodyProps>(({ onSectionChange }, ref) => {
 
   return (
     <>
-      <div className={`z-50 bg-[#3e403d] fixed w-full h-13 top-0 pl-7 flex gap-2 right-0 items-center justify-start p-1.5 antialiased border-b border-solid border-[#82fb7e] transition-all ${tittleInView ? "bar-hide" : "bar-show"}`}>
-        <p className={`transition-all font-editorial-new-ultralight w-auto text-3xl md:text-[29px] box-border antialiased hover:-skew-x-12 hover:cursor-pointer`} onClick={() => targetPrincipal.current?.scrollIntoView({ behavior: "smooth" })}>
+      <div
+        className={`z-50 bg-[#3e403d] fixed w-full h-13 top-0 pl-3 md:pl-7 flex gap-1 md:gap-2 right-0 items-center justify-start overflow-hidden antialiased border-b border-solid border-[#82fb7e] transition-all ${tittleInView ? "bar-hide" : "bar-show"}`}
+      >
+        <p
+          className={`transition-all font-editorial-new-ultralight w-auto text-2xl md:text-[29px] box-border antialiased hover:-skew-x-12 hover:cursor-pointer`}
+          onClick={() =>
+            targetPrincipal.current?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
           leonamlucius
         </p>
 
         <MeuIcone
-            fill="#82fb7e"
-            className={`w-6 h-6 transition-all mb-1 hover-shake`}
-          />
+          fill="#82fb7e"
+          className={`w-5 h-5 md:w-6 md:h-6 shrink-0 transition-all mb-1 hover-shake sm:block`}
+        />
+        <p
+          className={`pl-1.5 pr-1.5 md:pl-2 md:pr-2 flex items-center justify-center h-full m-0 transition-all font-editorial-new-ultralight w-auto text-2xl md:text-[29px] whitespace-nowrap border-solid border-l border-[#82fb7e] box-border antialiased hover:-skew-x-12 hover:cursor-pointer ${showStacks === null ? "hidden" : showStacks ? "bar-show" : "bar-hide"} `}
+          onClick={() =>
+            targetPrincipal.current?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          {lang === "pt" ? "minhas stacks" : "my stacks"}
+        </p>
+
+        <p
+          className={`pl-1.5 pr-1.5 md:pl-2 md:pr-2 flex items-center justify-center h-full m-0 transition-all font-editorial-new-ultralight w-auto  text-2xl md:text-[29px] whitespace-nowrap border-solid border-l border-r border-[#82fb7e] box-border antialiased hover:-skew-x-12 hover:cursor-pointer ${showProjetos === null ? "hidden" : showProjetos ? "bar-show" : "bar-hide"}`}
+          onClick={() =>
+            targetProjetos.current?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          {lang === "pt" ? "projetos" : "projects"}
+        </p>
       </div>
 
       <div
@@ -130,16 +186,24 @@ const Body = forwardRef<BodyRef, BodyProps>(({ onSectionChange }, ref) => {
         className="w-full items-center justify-start flex flex-col gap-5"
       >
         <div ref={targetPrincipal} className="w-full">
-          <Principal onTitleVisibilityChange={setTitleInView} lang={lang} />
+          <Principal
+            onTitleVisibilityChange={setTitleInView}
+            lang={lang}
+            onStacksVisibilityChange={handleStacksChange}
+          />
         </div>
         <div ref={targetProjetos} className="w-full">
-          <Projetos lang={lang} />
+          <Projetos
+            lang={lang}
+            onProjetosVisibilityChange={handleProjetosChange}
+          />
         </div>
         <div ref={targetContatos} className="w-full">
           <Contatos lang={lang} />
         </div>
       </div>
     </>
-  );});
+  );
+});
 
 export default Body;

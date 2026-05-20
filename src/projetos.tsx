@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import "./App.css";
 import { FaCircle } from "react-icons/fa";
 import { useInView } from "./hooks/useInView";
@@ -13,6 +13,7 @@ import { FaAngular } from "react-icons/fa";
 
 interface ProjetosProps {
   onTitleVisibilityChange?: (visible: boolean) => void;
+  onProjetosVisibilityChange?: (visible: boolean, aboveViewport: boolean) => void;
   lang?: "pt" | "en";
 }
 type Projeto = {
@@ -63,7 +64,13 @@ function ProjetoModal({
     </div>
   );
 }
-function ProjetoCard({ projeto, lang = "pt" }: { projeto: Projeto; lang?: "pt" | "en" }) {
+function ProjetoCard({
+  projeto,
+  lang = "pt",
+}: {
+  projeto: Projeto;
+  lang?: "pt" | "en";
+}) {
   const [cardRef, cardInView] = useInView(0.3);
   const [modalAberto, setModalAberto] = useState(false);
   return (
@@ -112,7 +119,18 @@ function ProjetoCard({ projeto, lang = "pt" }: { projeto: Projeto; lang?: "pt" |
   );
 }
 
-function Projetos({ lang = "pt" }: ProjetosProps) {
+function Projetos({ lang = "pt", onProjetosVisibilityChange }: ProjetosProps) {
+  const targetProjetos = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!targetProjetos.current || !onProjetosVisibilityChange) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => onProjetosVisibilityChange(entry.isIntersecting, entry.boundingClientRect.bottom < 0),
+      { threshold: 0 },
+    );
+    observer.observe(targetProjetos.current);
+    return () => observer.disconnect();
+  }, [onProjetosVisibilityChange]);
   const projetos: Projeto[] = [
     {
       name: "OMSYS",
@@ -135,12 +153,15 @@ function Projetos({ lang = "pt" }: ProjetosProps) {
   ];
   return (
     <>
-      <div className="bg-transparent w-full  justify-start items-center flex flex-col rounded-3xl overflow-clip">
+      <div
+        
+        className="bg-transparent w-full  justify-start items-center flex flex-col rounded-3xl overflow-clip"
+      >
         <div className="w-full flex items-start pt-3 pl-3 text-[#82fb7e] ">
           <FaCircle />
         </div>
 
-        <div className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
+        <div ref={targetProjetos} className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
           <div className="border-b-2 border-solid border-[#82fb7e] transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl pt-2 box-border antialiased hover:scale-[1.02]">
             {lang === "pt" ? "projetos" : "projects"}
           </div>
