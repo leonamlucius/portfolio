@@ -11,6 +11,10 @@ import { FaCss3Alt } from "react-icons/fa";
 import { FaRegWindowClose } from "react-icons/fa";
 import { FaAngular } from "react-icons/fa";
 
+interface ProjetosProps {
+  onTitleVisibilityChange?: (visible: boolean) => void;
+  lang?: "pt" | "en";
+}
 type Projeto = {
   name: string;
   description: string;
@@ -59,7 +63,7 @@ function ProjetoModal({
     </div>
   );
 }
-function ProjetoCard({ projeto }: { projeto: Projeto }) {
+function ProjetoCard({ projeto, lang = "pt" }: { projeto: Projeto; lang?: "pt" | "en" }) {
   const [cardRef, cardInView] = useInView(0.3);
   const [modalAberto, setModalAberto] = useState(false);
   return (
@@ -86,7 +90,7 @@ function ProjetoCard({ projeto }: { projeto: Projeto }) {
               setModalAberto(true);
             }}
           >
-            Ver Projeto
+            {lang === "pt" ? "Ver Projeto" : "View Project"}
           </a>
         )}
         {projeto.link && (
@@ -108,19 +112,23 @@ function ProjetoCard({ projeto }: { projeto: Projeto }) {
   );
 }
 
-function Projetos() {
-  const projetos = [
+function Projetos({ lang = "pt" }: ProjetosProps) {
+  const projetos: Projeto[] = [
     {
       name: "OMSYS",
       description:
-        "Painel administrativo com mais de 40 módulos funcionais, incluindo: controle de processos logísticos (cabotagem e rodoviário), emissão de CTes e notas fiscais, faturamentos, fluxo de caixa, contas bancárias, gestão de propostas comerciais, prospecção de clientes, jurídico, controladoria, organograma de equipe, biblioteca de documentos, ouvidoria interna, mural de comunicados e módulo de treinamentos.",
+        lang === "pt"
+          ? "Painel administrativo com mais de 40 módulos funcionais, incluindo: controle de processos logísticos (cabotagem e rodoviário), emissão de CTes e notas fiscais, faturamentos, fluxo de caixa, contas bancárias, gestão de propostas comerciais, prospecção de clientes, jurídico, controladoria, organograma de equipe, biblioteca de documentos, ouvidoria interna, mural de comunicados e módulo de treinamentos."
+          : "Administrative panel with over 40 functional modules, including: logistics process control (cabotage and road freight), CTe and invoice issuance, billing, cash flow, bank accounts, commercial proposal management, customer prospecting, legal, controllership, team org chart, document library, internal ombudsman, announcements board, and training module.",
       link: imageOmsys,
       stacks: [<SiJavascript />, <FaHtml5 />, <FaCss3Alt />],
     },
     {
       name: "anote.",
       description:
-        "(Em desenvolvimento) Aplicação de anotações e organização pessoal, com funcionalidades como criação de notas, organização por pastas, marcação de favoritos, compartilhamento de notas e sincronização em tempo real entre dispositivos.",
+        lang === "pt"
+          ? "(Em desenvolvimento) Aplicação de anotações e organização pessoal, com funcionalidades como criação de notas, organização por pastas, marcação de favoritos, compartilhamento de notas e sincronização em tempo real entre dispositivos."
+          : "(In development) Note-taking and personal organization app, featuring note creation, folder organization, favorites, note sharing, and real-time synchronization across devices.",
       link: imageAnote,
       stacks: [<FaAngular />],
     },
@@ -134,13 +142,13 @@ function Projetos() {
 
         <div className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
           <div className="border-b-2 border-solid border-[#82fb7e] transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl pt-2 box-border antialiased hover:scale-[1.02]">
-            projetos
+            {lang === "pt" ? "projetos" : "projects"}
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full p-5 box-border">
           {projetos.map((projeto, index) => (
-            <ProjetoCard key={index} projeto={projeto} />
+            <ProjetoCard key={index} projeto={projeto} lang={lang} />
           ))}
         </div>
       </div>

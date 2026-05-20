@@ -20,24 +20,23 @@ import fotoPerfil from "./assets/images/crt.png";
 
 interface PrincipalProps {
   onTitleVisibilityChange?: (visible: boolean) => void;
+  lang?: "pt" | "en";
 }
-function Principal({ onTitleVisibilityChange }: PrincipalProps) {
+function Principal({ onTitleVisibilityChange, lang = "pt" }: PrincipalProps) {
   const targetPrincipal = useRef<HTMLDivElement>(null);
   const [showIcon, setShowIcon] = useState(false);
   const [blackDivRef] = useInView(0.5);
   const targetTitle = useRef<HTMLDivElement>(null);
 
-  
-useEffect(() => {
-  if (!targetTitle.current || !onTitleVisibilityChange) return;
-  const observer = new IntersectionObserver(
-    ([entry]) => onTitleVisibilityChange(entry.isIntersecting),
-    { threshold: 0.5 }
-  );
-  observer.observe(targetTitle.current);
-  return () => observer.disconnect();
-}, [onTitleVisibilityChange]);
-  
+  useEffect(() => {
+    if (!targetTitle.current || !onTitleVisibilityChange) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => onTitleVisibilityChange(entry.isIntersecting),
+      { threshold: 0.5 },
+    );
+    observer.observe(targetTitle.current);
+    return () => observer.disconnect();
+  }, [onTitleVisibilityChange]);
 
   const divIcons = document.getElementById("divIcons");
 
@@ -75,7 +74,10 @@ useEffect(() => {
           <FaCircle />
         </div>
 
-        <div ref={targetTitle} className="w-full h-auto flex items-center  justify-start p-1.5 antialiased ">
+        <div
+          ref={targetTitle}
+          className="w-full h-auto flex items-center  justify-start p-1.5 antialiased "
+        >
           <TypeAnimation
             sequence={["leonamlucius", 400, () => setShowIcon(true)]}
             wrapper="div"
@@ -92,16 +94,9 @@ useEffect(() => {
 
         <div className="w-full h-auto flex flex-col-reverse  box-border text-xl  gap-1 md:flex-row items-center justify-start p-2 md:gap-4">
           <p className="font-light slide-in-left transition-all duration-200 ease-out font-domine m-0 w-full md:w-[70%] text-justify text-base md:text-xl h-auto">
-            Formado em Análise e Desenvolvimento de Sistemas, tenho experiência
-            em desenvolvimento de software, com foco em JavaScript, TypeScript,
-            React, Angular, porém, com experiência em Spring(Java) e
-            FastAPI(Python). Sou apaixonado por criar soluções eficientes e
-            inovadoras, sempre buscando aprimorar minhas habilidades e
-            contribuir para projetos desafiadores. Tenho experiência no ramo de
-            comércio exterior, porém, sempre busco desenvolver soluções para
-            todos os segmentos, com foco em qualidade e eficiência. Estou sempre
-            aberto a novas oportunidades e desafios, buscando crescer
-            profissionalmente e contribuir para o sucesso de projetos e equipes.
+            {lang === "pt"
+              ? "Formado em Análise e Desenvolvimento de Sistemas, tenho experiência em desenvolvimento de software, com foco em JavaScript, TypeScript, React, Angular, porém, com experiência em Spring(Java) e FastAPI(Python). Sou apaixonado por criar soluções eficientes e inovadoras, sempre buscando aprimorar minhas habilidades e contribuir para projetos desafiadores. Tenho experiência no ramo de comércio exterior, porém, sempre busco desenvolver soluções para todos os segmentos, com foco em qualidade e eficiência. Estou sempre aberto a novas oportunidades e desafios, buscando crescer profissionalmente e contribuir para o sucesso de projetos e equipes."
+              : "Graduated in Systems Analysis and Development, I have experience in software development with a focus on JavaScript, TypeScript, React, and Angular, as well as Spring (Java) and FastAPI (Python). I'm passionate about building efficient and innovative solutions, always looking to sharpen my skills and contribute to challenging projects. I have a background in foreign trade, but I'm always seeking to develop solutions across all industries, with a focus on quality and efficiency. I'm always open to new opportunities and challenges, aiming to grow professionally and contribute to the success of projects and teams."}
           </p>
 
           <div className="hidden md:flex self-stretch w-10 overflow-hidden items-center justify-center">
@@ -132,7 +127,7 @@ useEffect(() => {
           >
             <img
               src={fotoPerfil}
-              alt="Foto de perfil"
+              alt={lang === "pt" ? "Foto de perfil" : "Profile picture"}
               className="w-full h-full object-cover object-center"
             />
           </div>
@@ -141,7 +136,7 @@ useEffect(() => {
         <div className="w-full h-auto flex flex-col  justify-start  items-start p-1.5  box-border antialiased font-robot text-xl">
           <div className="transition-all font-normal w-auto flex justify-start text-4xl  box-border antialiased">
             <TypeAnimation
-              sequence={["minhas stacks", 5500]}
+              sequence={[lang === "pt" ? "minhas stacks" : "my stacks", 5500]}
               wrapper="div"
               speed={30}
               className="border-b-2 border-solid border-[#82fb7e] transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-7xl lg:text-7xl pt-2 box-border antialiased hover:scale-[1.02]"

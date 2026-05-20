@@ -29,6 +29,9 @@ const Body = forwardRef<BodyRef, BodyProps>(({ onSectionChange }, ref) => {
   const targetPrincipal = useRef<HTMLDivElement>(null);
   const targetProjetos = useRef<HTMLDivElement>(null);
   const targetContatos = useRef<HTMLDivElement>(null);
+  const lang = navigator.language.startsWith("pt") ? "pt" : "en";
+
+  console.log("Idioma do navegador:", lang);
   
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [contatosInView, setContatosInView] = useState(false);
@@ -127,13 +130,13 @@ const Body = forwardRef<BodyRef, BodyProps>(({ onSectionChange }, ref) => {
         className="w-full items-center justify-start flex flex-col gap-5"
       >
         <div ref={targetPrincipal} className="w-full">
-          <Principal onTitleVisibilityChange={setTitleInView}/>
+          <Principal onTitleVisibilityChange={setTitleInView} lang={lang} />
         </div>
         <div ref={targetProjetos} className="w-full">
-          <Projetos />
+          <Projetos lang={lang} />
         </div>
         <div ref={targetContatos} className="w-full">
-          <Contatos />
+          <Contatos lang={lang} />
         </div>
       </div>
     </>

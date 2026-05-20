@@ -6,7 +6,11 @@ import { MdAlternateEmail } from "react-icons/md";
 import qrCodeGit from "./assets/images/github.jpg";
 import qrCodeLink from "./assets/images/linkedin.jpg";
 
-function Contatos() {
+interface ContatisProps {
+  onTitleVisibilityChange?: (visible: boolean) => void;
+  lang?: "pt" | "en";
+}
+function Contatos({ lang = "pt" }: ContatisProps) {
   return (
     <>
       <div className="bg-[#3e403d] w-full  justify-start items-center flex flex-col rounded-3xl">
@@ -16,7 +20,7 @@ function Contatos() {
 
         <div className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
           <div className="border-b-2 border-solid border-[#82fb7e] transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl pt-2 box-border antialiased hover:scale-[1.02]">
-            contatos
+            {lang === "pt" ? "contatos" : "contacts"}
           </div>
         </div>
 
