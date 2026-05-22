@@ -121,7 +121,7 @@ function Principal({
 
           <div className="hidden md:flex self-stretch w-10 overflow-hidden items-center justify-center">
             <div
-              className="w-[500] h-10 shrink-0"
+              className="w-[2000px] h-10 shrink-0"
               style={{
                 backgroundImage: `url(${divider})`,
                 backgroundRepeat: "repeat-x",
@@ -143,7 +143,7 @@ function Principal({
 
           <div
             ref={blackDivRef}
-            className={`w-[75] h-[75] flex items-center justify-center overflow-clip transition-all`}
+            className={`w-[300px] h-[300px] flex items-center justify-center overflow-clip transition-all`}
           >
             <img
               src={fotoPerfil}
