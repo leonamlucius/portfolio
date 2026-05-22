@@ -13,7 +13,10 @@ import { FaAngular } from "react-icons/fa";
 
 interface ProjetosProps {
   onTitleVisibilityChange?: (visible: boolean) => void;
-  onProjetosVisibilityChange?: (visible: boolean, aboveViewport: boolean) => void;
+  onProjetosVisibilityChange?: (
+    visible: boolean,
+    aboveViewport: boolean,
+  ) => void;
   lang?: "pt" | "en";
 }
 type Projeto = {
@@ -21,6 +24,7 @@ type Projeto = {
   description: string;
   link: string;
   stacks: React.ReactElement[];
+  url: string;
 };
 function ProjetoModal({
   projeto,
@@ -60,6 +64,15 @@ function ProjetoModal({
         )}
 
         <p className="font-robot text-sm mt-4">{projeto.description}</p>
+
+        {projeto.url && (
+          <a
+            href={projeto.url}
+            className="font-robot text-sm mt-4 inline-block underline"
+          >
+            ACESSE
+          </a>
+        )}
       </div>
     </div>
   );
@@ -125,7 +138,11 @@ function Projetos({ lang = "pt", onProjetosVisibilityChange }: ProjetosProps) {
   useEffect(() => {
     if (!targetProjetos.current || !onProjetosVisibilityChange) return;
     const observer = new IntersectionObserver(
-      ([entry]) => onProjetosVisibilityChange(entry.isIntersecting, entry.boundingClientRect.bottom < 0),
+      ([entry]) =>
+        onProjetosVisibilityChange(
+          entry.isIntersecting,
+          entry.boundingClientRect.bottom < 0,
+        ),
       { threshold: 0 },
     );
     observer.observe(targetProjetos.current);
@@ -140,28 +157,30 @@ function Projetos({ lang = "pt", onProjetosVisibilityChange }: ProjetosProps) {
           : "Administrative panel with over 40 functional modules, including: logistics process control (cabotage and road freight), CTe and invoice issuance, billing, cash flow, bank accounts, commercial proposal management, customer prospecting, legal, controllership, team org chart, document library, internal ombudsman, announcements board, and training module.",
       link: imageOmsys,
       stacks: [<SiJavascript />, <FaHtml5 />, <FaCss3Alt />],
+      url: "",
     },
     {
       name: "anote.",
       description:
         lang === "pt"
-          ? "(Em desenvolvimento) Aplicação de anotações e organização pessoal, com funcionalidades como criação de notas, organização por pastas, marcação de favoritos, compartilhamento de notas e sincronização em tempo real entre dispositivos."
-          : "(In development) Note-taking and personal organization app, featuring note creation, folder organization, favorites, note sharing, and real-time synchronization across devices.",
+          ? "(Em desenvolvimento e com dados mockados) Aplicação de anotações e organização pessoal, com funcionalidades como criação de notas, organização por pastas, marcação de favoritos, compartilhamento de notas e sincronização em tempo real entre dispositivos."
+          : "(In development and with mock data) Note-taking and personal organization app, featuring note creation, folder organization, favorites, note sharing, and real-time synchronization across devices.",
       link: imageAnote,
       stacks: [<FaAngular />],
+      url: "https://anoto-seven.vercel.app/home",
     },
   ];
   return (
     <>
-      <div
-        
-        className="bg-transparent w-full  justify-start items-center flex flex-col rounded-3xl overflow-clip"
-      >
+      <div className="bg-transparent w-full  justify-start items-center flex flex-col rounded-3xl overflow-clip">
         <div className="w-full flex items-start pt-3 pl-3 text-[#82fb7e] ">
           <FaCircle />
         </div>
 
-        <div ref={targetProjetos} className="w-full h-auto flex items-end  justify-start p-1.5 antialiased">
+        <div
+          ref={targetProjetos}
+          className="w-full h-auto flex items-end  justify-start p-1.5 antialiased"
+        >
           <div className="border-b-2 border-solid border-[#82fb7e] transition-all font-normal font-editorial-new-ultralight w-auto text-5xl sm:text-5xl md:text-6xl pt-2 box-border antialiased hover:scale-[1.02]">
             {lang === "pt" ? "projetos" : "projects"}
           </div>
