@@ -163,11 +163,11 @@ function Projetos({ lang = "pt", onProjetosVisibilityChange }: ProjetosProps) {
       name: "anote.",
       description:
         lang === "pt"
-          ? "(Em desenvolvimento e com dados mockados) Aplicação de anotações e organização pessoal, com funcionalidades como criação de notas, organização por pastas, marcação de favoritos, compartilhamento de notas e sincronização em tempo real entre dispositivos."
+          ? "(Em desenvolvimento) Aplicação de anotações e organização pessoal, com funcionalidades como criação de notas, organização por pastas, marcação de favoritos, compartilhamento de notas e sincronização em tempo real entre dispositivos."
           : "(In development and with mock data) Note-taking and personal organization app, featuring note creation, folder organization, favorites, note sharing, and real-time synchronization across devices.",
       link: imageAnote,
       stacks: [<FaAngular />],
-      url: "https://anoto-seven.vercel.app/home",
+      url: "https://anoto-seven.vercel.app/login",
     },
   ];
   return (
