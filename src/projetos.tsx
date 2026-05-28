@@ -6,6 +6,7 @@ import { useInView } from "./hooks/useInView";
 import imageOmsys from "./assets/images/Captura de tela 2026-05-04 163229.png";
 import imageAnote from "./assets/images/Captura de tela 2026-05-15 122816.png";
 import { SiJavascript } from "react-icons/si";
+import { SiSpring } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
 import { FaCss3Alt } from "react-icons/fa";
 import { FaRegWindowClose } from "react-icons/fa";
@@ -166,7 +167,7 @@ function Projetos({ lang = "pt", onProjetosVisibilityChange }: ProjetosProps) {
           ? "(Em desenvolvimento) Aplicação de anotações e organização pessoal, com funcionalidades como criação de notas, organização por pastas, marcação de favoritos, compartilhamento de notas e sincronização em tempo real entre dispositivos."
           : "(In development and with mock data) Note-taking and personal organization app, featuring note creation, folder organization, favorites, note sharing, and real-time synchronization across devices.",
       link: imageAnote,
-      stacks: [<FaAngular />],
+      stacks: [<FaAngular />,<FaCss3Alt /> ,<SiSpring />],
       url: "https://anoto-seven.vercel.app/login",
     },
   ];

@@ -172,14 +172,15 @@ function Principal({
             className=" slide-in-left w-full h-auto gap-3 flex items-start justify-start antialiased font-robot text-xl indent-3 pt-6"
             id="divIcons"
           >
-            <SiJavascript className="text-4xl text-[#82fb7e] hover:text-yellow-400 hover: " />
-            <SiTypescript className="text-4xl text-[#82fb7e] hover:text-blue-600" />
-            <SiReact className="text-4xl text-[#82fb7e] hover:text-cyan-400" />
-            <SiSpring className="text-4xl text-[#82fb7e] hover:text-green-600" />
-            <SiPython className="text-4xl text-[#82fb7e] hover:text-yellow-500" />
-            <SiMysql className="text-4xl text-[#82fb7e] hover:text-blue-500" />
-            <SiFastapi className="text-4xl text-[#82fb7e] hover:text-green-500" />
-            <SiAngular className="text-4xl text-[#82fb7e] hover:text-red-600 " />
+            <SiJavascript className="text-4xl text-[#82fb7e] hover:text-yellow-400 hover:cursor-none " />
+            <SiTypescript className="text-4xl text-[#82fb7e] hover:text-blue-600 hover:cursor-none"  />
+            <SiTypescript className="text-4xl text-[#82fb7e] hover:text-blue-600 hover:cursor-none"  />
+            <SiReact className="text-4xl text-[#82fb7e] hover:text-cyan-400 hover:cursor-none" />
+            <SiSpring className="text-4xl text-[#82fb7e] hover:text-green-600 hover:cursor-none" />
+            <SiPython className="text-4xl text-[#82fb7e] hover:text-yellow-500 hover:cursor-none" />
+            <SiMysql className="text-4xl text-[#82fb7e] hover:text-blue-500 hover:cursor-none" />
+            <SiFastapi className="text-4xl text-[#82fb7e] hover:text-green-500 hover:cursor-none" />
+            <SiAngular className="text-4xl text-[#82fb7e] hover:text-red-600 hover:cursor-none" />
           </div>
         </div>
       </div>
