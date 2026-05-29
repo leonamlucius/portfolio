@@ -151,7 +151,7 @@ function Projetos({ lang = "pt", onProjetosVisibilityChange }: ProjetosProps) {
   }, [onProjetosVisibilityChange]);
   const projetos: Projeto[] = [
     {
-      name: "OMSYS",
+      name: "Painel Operacional/ERP Comex",
       description:
         lang === "pt"
           ? "Painel administrativo com mais de 40 módulos funcionais, incluindo: controle de processos logísticos (cabotagem e rodoviário), emissão de CTes e notas fiscais, faturamentos, fluxo de caixa, contas bancárias, gestão de propostas comerciais, prospecção de clientes, jurídico, controladoria, organograma de equipe, biblioteca de documentos, ouvidoria interna, mural de comunicados e módulo de treinamentos."
