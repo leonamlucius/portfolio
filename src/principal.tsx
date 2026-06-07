@@ -17,6 +17,7 @@ import { TypeAnimation } from "react-type-animation";
 import MeuIcone from "./assets/images/victory-svgrepo-com.svg?react";
 import divider from "./assets/images/divider.png";
 import fotoPerfil from "./assets/images/crt.png";
+import { RiTailwindCssFill } from "react-icons/ri";
 
 interface PrincipalProps {
   onTitleVisibilityChange?: (visible: boolean) => void;
@@ -172,15 +173,15 @@ function Principal({
             className=" slide-in-left w-full h-auto gap-3 flex items-start justify-start antialiased font-robot text-xl indent-3 pt-6"
             id="divIcons"
           >
-            <SiJavascript className="text-4xl text-[#82fb7e] hover:text-yellow-400 hover:cursor-none " />
-            <SiTypescript className="text-4xl text-[#82fb7e] hover:text-blue-600 hover:cursor-none"  />
-            <SiTypescript className="text-4xl text-[#82fb7e] hover:text-blue-600 hover:cursor-none"  />
-            <SiReact className="text-4xl text-[#82fb7e] hover:text-cyan-400 hover:cursor-none" />
-            <SiSpring className="text-4xl text-[#82fb7e] hover:text-green-600 hover:cursor-none" />
-            <SiPython className="text-4xl text-[#82fb7e] hover:text-yellow-500 hover:cursor-none" />
-            <SiMysql className="text-4xl text-[#82fb7e] hover:text-blue-500 hover:cursor-none" />
-            <SiFastapi className="text-4xl text-[#82fb7e] hover:text-green-500 hover:cursor-none" />
-            <SiAngular className="text-4xl text-[#82fb7e] hover:text-red-600 hover:cursor-none" />
+            <SiJavascript className="text-4xl text-[#82fb7e] hover:text-yellow-400 hover:cursor-none " title="JavaScript" />
+            <SiTypescript className="text-4xl text-[#82fb7e] hover:text-blue-600 hover:cursor-none" title="TypeScript" />
+            <RiTailwindCssFill className="text-4xl text-[#82fb7e] hover:text-sky-400 hover:cursor-none" title="Tailwind CSS" />
+            <SiReact className="text-4xl text-[#82fb7e] hover:text-cyan-400 hover:cursor-none" title="React" />
+            <SiSpring className="text-4xl text-[#82fb7e] hover:text-green-600 hover:cursor-none" title="Spring" />
+            <SiPython className="text-4xl text-[#82fb7e] hover:text-yellow-500 hover:cursor-none" title="Python" />
+            <SiMysql className="text-4xl text-[#82fb7e] hover:text-blue-500 hover:cursor-none" title="MySQL" />
+            <SiFastapi className="text-4xl text-[#82fb7e] hover:text-green-500 hover:cursor-none" title="FastAPI" />
+            <SiAngular className="text-4xl text-[#82fb7e] hover:text-red-600 hover:cursor-none" title="Angular" />
           </div>
         </div>
       </div>
