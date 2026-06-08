@@ -5,6 +5,7 @@ import { useInView } from "./hooks/useInView";
 
 import imageOmsys from "./assets/images/Captura de tela 2026-05-04 163229.png";
 import imageAnote from "./assets/images/Captura de tela 2026-06-07 195950.png";
+import imageMono from "./assets/images/Captura de tela 2026-06-08 144638.png";
 import { SiJavascript } from "react-icons/si";
 import { SiSpring } from "react-icons/si";
 import { FaHtml5 } from "react-icons/fa";
@@ -170,6 +171,16 @@ function Projetos({ lang = "pt", onProjetosVisibilityChange }: ProjetosProps) {
       stacks: [<FaAngular />,<FaCss3Alt /> ,<SiSpring />],
       url: "https://anoto-seven.vercel.app/login",
     },
+    {
+      name: "Mono",
+      description:
+        lang === "pt"
+          ? "(Em desenvolvimento) Chat bot IA para perguntas, repostas e curiosidades sobre o mundo "
+          : "(In development) AI chat bot for questions, answers, and curiosities about the world.",
+      link: imageMono,
+      stacks: [<FaAngular />,<FaCss3Alt />],
+      url: "",
+    }
   ];
   return (
     <>
